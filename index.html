@@ -8,6 +8,8 @@
         display: inline-block;
       }
 
+      
+
       .dropdown-content {
         display: none;
         position: absolute;
@@ -20,6 +22,13 @@
       .dropdown:hover .dropdown-content {
         display: block;
       }
+
+
+      .checked {
+        color: orange;
+      }
+
+
     </style>
     <meta charset="utf-8" />
     <meta
@@ -36,6 +45,8 @@
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
       crossorigin="anonymous"
     ></script>
+    <!-- Another version of font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Google fonts-->
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
@@ -72,16 +83,19 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#services">Reviews</a>
+              <a class="nav-link" href="#services">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#portfolio">FAQ</a>
+              <a class="nav-link" href="#portfolio">How it works</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
+              <a class="nav-link" href="#reviews">Reviews</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#faq">FAQ</a>
             </li>
           </ul>
         </div>
@@ -102,99 +116,212 @@
         >
       </div>
     </header>
+    <!-- About -->
+    <section class="page-section bg-secondary" id="about">
+      <div class="d-flex justify-content-center align-items-center mb-5 mx-2">
+        <div>
+          <a class="btn btn-light btn-social" href="https://www.facebook.com/profile.php?id=100092396471212" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+        <div>
+          <a class="btn btn-light btn-social" href="https://www.instagram.com/bronsonsandusky" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <div>
+          <a class="btn btn-light btn-social" aria-label="Phone number">
+            <i class="fa fa-phone-square"></i>
+          </a>
+        </div>
+        <div>
+          <a class="btn btn-light btn-social" aria-label="Email">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="container">
+        <h2
+          class="section-heading text-uppercase text-center text-light"
+          style="margin-top: -20px"
+        >
+          About me
+        </h2>
+        <p
+          class="section-subheading text-light text-center"
+          style="font-size: 15px"
+        >
+          I have been bartending for 3 years and I truly have a passion for it.
+          I love crafting a cocktail, handing it to someone, and being fully
+          confident that they will absolutely enjoy it. I feel like there is an
+          art in that. At these private events, I am able to mix and create any
+          drink with the ingredients I am provided with. Hiring me for your
+          events will take the stress of pleasing guests off of your shoulders
+          and allow you to sit back and enjoy the event as much as them. My goal
+          is to provide delicious, hand-crafted cocktails, along with fast anf
+          entertaining service.
+        </p>
+
+      <p class="section-subheading text-light text-center" style="font-size: 15px">
+        A little more about myself... I was 16 years old when I first started working in the service
+        industry. My first job was working as a bar-back at Le Pavillion, a
+        local reception venue. During my days as a bar-back, I always
+        admired the bartenders. Not because they were my bosses, but because
+        they genuinely enjoyed what they were doing. Their enthusiasm, the
+        way they engaged with guests, crafted fantastic drinks, and exuded
+        confidence - they were the life of the party. I bar-backed there for
+        two years until the day I turned 18. I got my bar card, and I was
+        ready to dive into bartending. I continued bartending at Le
+        Pavillion for another year and absolutely loved it. A few months
+        before turning 19, I landed a position at Ruffino's on the River. To
+        earn my spot behind the bar, I started as a busboy and bar-back
+        while still juggling shifts at Le Pavillon. I even spent my 19th
+        birthday bar-backing at Ruffino's on a lively Saturday night. My
+        commitment to becoming a seasoned bartender was unwavering. One day,
+        a family friend asked if I could work as a bartender for a "private
+        event." Excitedly, I agreed, partly driven by the need for extra
+        cash. While working this private event, I was approached by guests
+        wondering if I had business cards. I hadn't considered business
+        cards or taking private events seriously until that moment. The
+        questions about them during the event sparked something in me. The
+        day after, thoughts of starting my own company flooded my mind. Over
+        a year later, I've turned that inspiration into reality. I am now a
+        private event bartender, combining my knowledge of mixology with
+        fast and entertaining service.
+      </p>
+      </div>
+    </section>
     <!-- About-->
-    <section class="page-section bg-dark" id="about">
+    <section class="page-section bg-dark" id="portfolio">
       <div class="container">
         <div class="text-center">
-          <h2
-            class="section-heading text-uppercase text-light"
-            style="margin-top: -20px"
-          >
-            My Story
-          </h2>
-          <p class="section-subheading text-light" style="font-size: 15px">
-            I was 16 years old when I first started working in the service
-            industry. My first job was working as a bar-back at Le Pavillion, a
-            local reception venue. During my days as a bar-back, I always
-            admired the bartenders. Not because they were my bosses, but because
-            they genuinely enjoyed what they were doing. Their enthusiasm, the
-            way they engaged with guests, crafted fantastic drinks, and exuded
-            confidence - they were the life of the party. I bar-backed there for
-            two years until the day I turned 18. I got my bar card, and I was
-            ready to dive into bartending. I continued bartending at Le
-            Pavillion for another year and absolutely loved it. A few months
-            before turning 19, I landed a position at Ruffino's on the River. To
-            earn my spot behind the bar, I started as a busboy and bar-back
-            while still juggling shifts at Le Pavillon. I even spent my 19th
-            birthday bar-backing at Ruffino's on a lively Saturday night. My
-            commitment to becoming a seasoned bartender was unwavering. One day,
-            a family friend asked if I could work as a bartender for a "private
-            event." Excitedly, I agreed, partly driven by the need for extra
-            cash. While working this private event, I was approached by guests
-            wondering if I had business cards. I hadn't considered business
-            cards or taking private events seriously until that moment. The
-            questions about them during the event sparked something in me. The
-            day after, thoughts of starting my own company flooded my mind. Over
-            a year later, I've turned that inspiration into reality. I am now a
-            private event bartender, combining my knowledge of mixology with
-            fast and entertaining service.
-          </p>
           <h2 class="section-heading text-uppercase text-light mb-4">
             How it works
           </h2>
-          <p class="section-subheading text-light" style="font-size: 15px">
-            Once a time is reserved, we can arrange a meeting for me to answer
-            any questions you may have prior to the event. On the day of the
-            event, I will arrive an hour before the scheduled time to prepare my
-            bartending station. The client provides a bar area, for example a
-            designated space at the location of the event, tables if needed, ice
-            chests, beer, wine, and ice for cocktails. The client provides all
-            alcohol, mixers, cups, napkins, and I provide all bartending
-            equipment along with all fruits/garnishes. I charge by the hour;
-            Once you book with me, I will be willing to work an event as long as
-            neccessary. Additionally, no event is too soon, and it is never to
-            early to book with me. So let's get this party started and book with
-            Bronson!
-          </p>
+          <div style="text-align: center;">
+            <ul style="padding: 0; display: inline-block;">
+                <li style="margin-bottom: 10px; background-color: #f2f2f2; padding: 10px; border-radius: 5px; text-align: left;">Reserve a time with me</li>
+                <li style="margin-bottom: 10px; background-color: #f2f2f2; padding: 10px; border-radius: 5px; text-align: left;">Client provides bar area</li>
+                <li style="margin-bottom: 10px; background-color: #f2f2f2; padding: 10px; border-radius: 5px; text-align: left;">Client provides ice chests, ice for drinks, cups, napkins, straws, ect.</li>
+                <li style="margin-bottom: 10px; background-color: #f2f2f2; padding: 10px; border-radius: 5px; text-align: left;">Client provides beer, wine, liquor, and mixers </li>
+                <li style="margin-bottom: 10px; background-color: #f2f2f2; padding: 10px; border-radius: 5px; text-align: left;">I provide all bar equipement neccessary, along with fruit.</li>" </li>
+            </ul>
+        </div>
         </div>
       </div>
     </section>
     <!-- Reviews -->
-    <section class="page-section bg-secondary" id="services">
-      <div class="container">
-        <div class="text-center">
-          <h2 class="section-heading text-uppercase text-light">Reviews</h2>
-          <p class="section-subheading text-light" style="font-size: 24px">
-            "We hired Bronson to bartend a private event, and he delivered
-            creative cocktails and spectacular service. He arrived early to set
-            up his service station. He mixed excellent mocktails and cocktails
-            and was engaging with our group. His spicy margarita was excellent!
-            We would highly recommend Bronson for your upcoming event, whether a
-            dinner with friends or company holiday party. Leave the bartending
-            to him, and spend time enjoying your company.
-          </p>
-          <p class="section-subheading text-light">- B. Alford</p>
-          <p class="section-subheading text-light" style="font-size: 24px">
-            "Thanks for helping make our party so much fun!"
-          </p>
-          <p class="section-subheading text-light">- D. Pierce</p>
-          <p class="section-subheading text-light" style="font-size: 24px">
-            "Best Bartender in Lafayette! Get 'em booked for all your private
-            events, weddings, and special occasions!"
-          </p>
-          <p class="section-subheading text-light">- M. Tate-Suttles</p>
-          <p class="section-subheading text-light" style="font-size: 24px">
-            "This guy is the best bartender. Hire him, he's worth the money.
-            First class bartender and great young man."
-          </p>
-          <p class="section-subheading text-light">-Roderick Latiolais</p>
+<section class="page-section bg-secondary" id="reviews">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase text-light">Client Reviews</h2>
+
+      <!-- Review Cards -->
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Review Card 1 -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <div>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <p class="card-text" style="font-size: 18px;">
+                <span class="quote">&ldquo;</span>We hired Bronson to bartend a private event, and he delivered creative cocktails and spectacular service. He arrived early to set up his service station. He mixed excellent mocktails and cocktails and was engaging with our group. His spicy margarita was excellent! We would highly recommend Bronson for your upcoming event, whether a dinner with friends or company holiday party. Leave the bartending to him, and spend time enjoying your company.<span class="quote">&rdquo;</span>
+              </p>
+              <p class="card-text">- B. Alford</p>
+            </div>
+          </div>
         </div>
-        <p class="section-subheading text-light" style="font-size: 24px">
-          "He's the best! Highly recommend his bartending skills!"
-        </p>
-        <p class="section-subheading text-light">- E. Knezek</p>
+
+        <!-- Review Card 3 -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <div>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <p class="card-text" style="font-size: 18px;">
+                <span class="quote">&ldquo;</span>"Best Bartender in Lafayette! Get 'em booked for all your private events, weddings, and special occasions!"<span class="quote">&rdquo;</span>
+              </p>
+              <p class="card-text">- M. Tate-Suttles</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 4 -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <div>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <p class="card-text" style="font-size: 18px;">
+                <span class="quote">&ldquo;</span>"This guy is the best bartender. Hire him, he's worth the money. First class bartender and great young man."<span class="quote">&rdquo;</span>
+              </p>
+              <p class="card-text">- Roderick Latiolais</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 5 -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <div>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <p class="card-text" style="font-size: 18px;">
+                <span class="quote">&ldquo;</span>He's the best! Highly recommend his bartending skills!<span class="quote">&rdquo;</span>
+              </p>
+              <p class="card-text">- E. Knezek</p>
+            </div>
+          </div>
+        </div>
+
+               <!-- Review Card 2 -->
+               <div class="col">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <div>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="card-text" style="font-size: 18px;">
+                      <span class="quote">&ldquo;</span>Thanks for helping make our party so much fun!<span class="quote">&rdquo;</span>
+                    </p>
+                    <p class="card-text">- D. Pierce</p>
+                  </div>
+                </div>
+              </div>
+
+        <!-- Add more review cards as needed -->
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+  
+
     <!-- Contact-->
     <section class="page-section bg-dark" id="contact">
       <div class="container">
@@ -255,7 +382,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="page-section bg-secondary" id="portfolio">
+    <section class="page-section bg-secondary" id="faq">
       <div class="container">
         <div class="text-center">
           <h2 class="section-heading text-uppercase text-light">FAQ</h2>
@@ -279,7 +406,8 @@
               </h3>
             </summary>
             <p class="section-subheading text-light" style="font-size: 24px">
-              I charge a flat rate of $50 per hour.
+              I charge a flat rate of $50 per hour. Final rates are subject
+              to change based on the size of event. 
             </p>
           </details>
 
