@@ -1,1064 +1,1056 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <style>
-    /* Basic styling for modal */
-        #myModal .modal-content {
-      background-color: #4c443c;
-    }
-    .modal {
-      display: none; /* Hidden by default */
-      position: fixed;
-      z-index: 1; /* Sit on top */
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.4); /* Background color with transparency */
-      padding-top: 60px;
-    }
-
-    .modal-content {
-      background-color: #fff;
-      margin: 5% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      max-width: 500px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-    }
-
-    .close-btn {
-      color: #aaa;
-      font-size: 28px;
-      font-weight: bold;
-      position: absolute;
-      top: 10px;
-      right: 25px;
-      transition: color 0.3s ease;
-    }
-
-    .close-btn:hover,
-    .close-btn:focus {
-      color: #000;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    /* Style for the button */
-    button {
-      background-color: #ffffff;
-      color: rgb(0, 0, 0);
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button:hover {
-      background-color: #ffffffa7;
-    }
-      /* Style for the dropdown */
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-
-      .dropdown-content {
-        display: none;
-        position: absolute;
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <style>
+      /* Basic styling for modal */
+          #myModal .modal-content {
         background-color: #4c443c;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
+      }
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4); /* Background color with transparency */
+        padding-top: 60px;
       }
 
-      .dropdown:hover .dropdown-content {
-        display: block;
+      .modal-content {
+        background-color: #fff;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
       }
 
-      .checked {
-        color: orange;
+      .close-btn {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        transition: color 0.3s ease;
       }
 
-      body {
-  font-family: Arial, sans-serif;
-}
-    </style>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Book with Bronson</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <script
-      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Another version of font awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <!-- Google fonts-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/style.css" rel="stylesheet" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-S0H9Q1726N"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
+      .close-btn:hover,
+      .close-btn:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
       }
-      gtag("js", new Date());
-      gtag("config", "G-S0H9Q1726N");
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-16763497000"
-    ></script>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-16763497000"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
+
+      /* Style for the button */
+      button {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
       }
-      gtag("js", new Date());
-      gtag("config", "AW-16763497000");
-    </script>
-  </head>
-  <body id="page-top">
-    <!-- Navigation-->
-    <nav
-      class="navbar navbar-expand-lg fixed-top"
-      id="mainNav"
-      style="background-color: #4c443c"
-      ;
-    >
-      <div class="container">
-        <a class="navbar-brand" href="#page-top"
-          ><img src="assets/img/icon.png" alt="..."
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          Menu
-          <i class="fas fa-bars ms-1"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#howitworks">How it works</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#reviews">Reviews</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#faq">FAQ</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">CONTACT</a>
-            </li>
-            <li class="nav-item">
-              <a
-              class="btn btn-secondary btn-m"
+
+      button:hover {
+        background-color: #ffffffa7;
+      }
+        /* Style for the dropdown */
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #4c443c;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+
+        .checked {
+          color: orange;
+        }
+
+        body {
+    font-family: Arial, sans-serif;
+  }
+      </style>
+      <meta charset="utf-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+      <meta name="description" content="" />
+      <meta name="author" content="" />
+      <title>Book with Bronson</title>
+      <!-- Favicon-->
+      <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+      <!-- Font Awesome icons (free version)-->
+      <script
+        src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+        crossorigin="anonymous"
+      ></script>
+      <!-- Another version of font awesome -->
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+      <!-- Google fonts-->
+      <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link
+        href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <!-- Core theme CSS (includes Bootstrap)-->
+      <link href="css/style.css" rel="stylesheet" />
+      <!-- Google tag (gtag.js) -->
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-S0H9Q1726N"
+      ></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-S0H9Q1726N");
+      </script>
+      <!-- Google tag (gtag.js) -->
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=AW-16763497000"
+      ></script>
+      <!-- Google tag (gtag.js) -->
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=AW-16763497000"
+      ></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "AW-16763497000");
+      </script>
+    </head>
+    <body id="page-top">
+      <!-- Navigation-->
+      <nav
+        class="navbar navbar-expand-lg fixed-top"
+        id="mainNav"
+        style="background-color: #4c443c"
+        ;
+      >
+        <div class="container">
+          <a class="navbar-brand" href="#page-top"
+            ><img src="assets/img/icon.png" alt="..."
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            Menu
+            <i class="fas fa-bars ms-1"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#howitworks">How it works</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#reviews">Reviews</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#faq">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">CONTACT</a>
+              </li>
+              <li class="nav-item">
+                <a
+                class="btn btn-secondary btn-m"
+                style="border-width: 2px"
+                href="https://calendly.com/bronsons"
+                target="_blank"
+                
+                >Schedule Now</a
+              >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Masthead-->
+      <header class="masthead">
+        <div class="container">
+          <div class="masthead-heading text-uppercase">
+            <p>Book with Bronson</p>
+          </div>
+          <div
+          style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;">
+          <!--
+            <button id="openModalBtn" class="btn btn-light" style="margin-bottom: 20px;">Get a Quote</button>
+
+            -->
+            <a
+              class="btn btn-secondary btn-xl"
               style="border-width: 2px"
               href="https://calendly.com/bronsons"
               target="_blank"
-              
               >Schedule Now</a
             >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- Masthead-->
-    <header class="masthead">
-      <div class="container">
-        <div class="masthead-heading text-uppercase">
-          <p>Book with Bronson</p>
-        </div>
-        <div
-        style="
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;">
-        <!--
-          <button id="openModalBtn" class="btn btn-light" style="margin-bottom: 20px;">Get a Quote</button>
-
-          -->
-          <a
-            class="btn btn-secondary btn-xl"
-            style="border-width: 2px"
-            href="https://calendly.com/bronsons"
-            target="_blank"
-            >Schedule Now</a
-          >
+            
+          </div>
+          <!-- Modal Structure -->
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close-btn" id="closeModalBtn">&times;</span>
+              <h2>Get a Quote</h2>        
+              <!-- Form Starts Here -->
+              <form id="eventForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
           
-        </div>
-        <!-- Modal Structure -->
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-            <span class="close-btn" id="closeModalBtn">&times;</span>
-            <h2>Get a Quote</h2>        
-            <!-- Form Starts Here -->
-            <form id="eventForm">
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name" required><br><br>
-        
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required><br><br>
-        
-              <label for="eventEnd">What is the anticipated start/end time of your event?</label>
-              <input type="text" id="eventEnd" name="eventEnd"><br><br>
-        
-              <label for="address">What is the address of your event?</label>
-              <input type="text" id="address" name="address" required><br><br>
-        
-              <label for="attendees">How many guests will be attending this event? *if over 80, additional bartender required.</label>
-              <input type="number" id="attendees" name="attendees" min="1" required><br><br>
-        
-              <label for="celebration">What are we celebrating at this event?</label>
-              <textarea id="celebration" name="celebration"></textarea><br><br>
-        
-              <label for="cocktails">What kind of cocktails do you want to be served at this event?</label>
-              <textarea id="cocktails" name="cocktails" required></textarea><br><br>
-        
-              <label for="addons">Would you like to include any optional add-ons?</label><br>
-              <input type="checkbox" id="barSetUp" name="addons" value="Bar Set Up">
-              <label for="barSetUp">6' foldable bar table rental ($50)</label><br>
-              <input type="checkbox" id="mixers" name="addons" value="Mixers">
-              <label for="mixers">6' x 4' bar table rental ($100)</label><br>
-              <input type="checkbox" id="glassware" name="addons" value="Glassware">
-              <label for="glassware">Valet service ( $30 / hour)</label><br><br>
-              <button type="submit">Submit</button>
-              <p
-              style="
-                margin-top: 20px;
-                color: #b30000; /* Darker red for readability */   
-              "
-              >
-                <strong> You will receive a final quote via email / text message.<strong>
-              </p>
-            </form>
-            <!-- Form Ends Here -->
-        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+          
+                <label for="eventEnd">What is the anticipated start/end time of your event?</label>
+                <input type="text" id="eventEnd" name="eventEnd"><br><br>
+          
+                <label for="address">What is the address of your event?</label>
+                <input type="text" id="address" name="address" required><br><br>
+          
+                <label for="attendees">How many guests will be attending this event? *if over 80, additional bartender required.</label>
+                <input type="number" id="attendees" name="attendees" min="1" required><br><br>
+          
+                <label for="celebration">What are we celebrating at this event?</label>
+                <textarea id="celebration" name="celebration"></textarea><br><br>
+          
+                <label for="cocktails">What kind of cocktails do you want to be served at this event?</label>
+                <textarea id="cocktails" name="cocktails" required></textarea><br><br>
+          
+                <label for="addons">Would you like to include any optional add-ons?</label><br>
+                <input type="checkbox" id="barSetUp" name="addons" value="Bar Set Up">
+                <label for="barSetUp">6' foldable bar table rental ($50)</label><br>
+                <input type="checkbox" id="mixers" name="addons" value="Mixers">
+                <label for="mixers">6' x 4' bar table rental ($100)</label><br>
+                <input type="checkbox" id="glassware" name="addons" value="Glassware">
+                <label for="glassware">Valet service ( $30 / hour)</label><br><br>
+                <button type="submit">Submit</button>
+                <p
+                style="
+                  margin-top: 20px;
+                  color: #b30000; /* Darker red for readability */   
+                "
+                >
+                  <strong> You will receive a final quote via email / text message.<strong>
+                </p>
+              </form>
+              <!-- Form Ends Here -->
+          
+            </div>
           </div>
         </div>
-      </div>
-      <div class="d-flex justify-content-center mb-5 mx-2">
-        <div>
-          <a
-            class="btn btn-light btn-social"
-            href="https://www.facebook.com/profile.php?id=100092396471212"
-            aria-label="Facebook"
-            style="margin: 10px"
-          >
-            <i class="fab fa-facebook-f"></i>
-          </a>
-        </div>
-        <div>
-          <a
-            class="btn btn-light btn-social"
-            href="https://www.instagram.com/bronsonsbartending"
-            aria-label="Instagram"
-            style="margin: 10px"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
-        <div>
-          <a
-            class="btn btn-light btn-social"
-            aria-label="Phone number"
-            style="margin: 10px"
-          >
-            <i class="fa fa-phone-square"></i>
-          </a>
+        <div class="d-flex justify-content-center mb-5 mx-2">
+          <div>
+            <a
+              class="btn btn-light btn-social"
+              href="https://www.facebook.com/profile.php?id=100092396471212"
+              aria-label="Facebook"
+              style="margin: 10px"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </div>
+          <div>
+            <a
+              class="btn btn-light btn-social"
+              href="https://www.instagram.com/bronsonsbartending"
+              aria-label="Instagram"
+              style="margin: 10px"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+          <div>
+            <a
+              class="btn btn-light btn-social"
+              aria-label="Phone number"
+              style="margin: 10px"
+            >
+              <i class="fa fa-phone-square"></i>
+            </a>
 
-        </div>
-        <div>
-          <a
-            class="btn btn-light btn-social"
-            aria-label="Email"
-            style="margin: 10px"
-          >
-            <i class="fa fa-envelope"></i>
-          </a>
-        </div>
-        <div style="margin-top: 9px; margin-left: 8px;" >
-          <a target="_blank"href="https://www.theknot.com/marketplace/redirect-2089951?utm_source=vendor_website&utm_medium=banner&utm_term=e3b0061b-f831-40fa-9ecb-1bcb901dfc84&utm_campaign=vendor_badge_assets"><img alt="TheKnot.com" border="0" height="40" src="https://d13ns7kbjmbjip.cloudfront.net/For_Your_Website/TK-icon_circle_medium.png"></a>
+          </div>
+          <div>
+            <a
+              class="btn btn-light btn-social"
+              aria-label="Email"
+              style="margin: 10px"
+            >
+              <i class="fa fa-envelope"></i>
+            </a>
+          </div>
+          <div style="margin-top: 9px; margin-left: 8px;" >
+            <a target="_blank"href="https://www.theknot.com/marketplace/redirect-2089951?utm_source=vendor_website&utm_medium=banner&utm_term=e3b0061b-f831-40fa-9ecb-1bcb901dfc84&utm_campaign=vendor_badge_assets"><img alt="TheKnot.com" border="0" height="40" src="https://d13ns7kbjmbjip.cloudfront.net/For_Your_Website/TK-icon_circle_medium.png"></a>
 
+          </div>
+          <div style="position: relative; height: 200px;">
+            <a target="_blank" href="https://www.theknot.com/marketplace/redirect-2089951?utm_source=vendor_website&utm_medium=banner&utm_term=e3b0061b-f831-40fa-9ecb-1bcb901dfc84&utm_campaign=vendor_badge_assets">
+              <img alt="As Seen on The Knot" border="0" src="https://d13ns7kbjmbjip.cloudfront.net/For_Your_Website/TK-badge_AsSeen.png" width="100" 
+                  style="position: absolute; top: 220px; right: 220px;">
+            </a>
+          </div>
         </div>
-        <div style="position: relative; height: 200px;">
-          <a target="_blank" href="https://www.theknot.com/marketplace/redirect-2089951?utm_source=vendor_website&utm_medium=banner&utm_term=e3b0061b-f831-40fa-9ecb-1bcb901dfc84&utm_campaign=vendor_badge_assets">
-            <img alt="As Seen on The Knot" border="0" src="https://d13ns7kbjmbjip.cloudfront.net/For_Your_Website/TK-badge_AsSeen.png" width="100" 
-                 style="position: absolute; top: 220px; right: 220px;">
-          </a>
-        </div>
-      </div>
-    </header>
-    <!-- About -->
-    <section class="page-section" id="about" style="background-color: #4c443c">
-      <h2
-        class="section-heading text-uppercase text-center"
-        style="margin-top: -50px; color: #eff9f0"
+      </header>
+      <!-- About -->
+      <section class="page-section" id="about" style="background-color: #4c443c">
+        <h2
+          class="section-heading text-uppercase text-center"
+          style="margin-top: -50px; color: #eff9f0"
+        >
+          My Mission
+        </h2>
+
+        <h4
+          class="section-subheading text-center"
+          style="margin-bottom: -55px; color: #eff9f0"
+        >
+          <span class="dropcap">"</span>
+          To relieve the host of stress by ensuring that all guests have a drink
+          in their hand and are having a great time! "
+        </h4>
+      </section>
+      <!-- How it works-->
+      <section
+        class="page-section"
+        id="howitworks"
+        style="background-color: #4c443c"
       >
-        My Mission
-      </h2>
+        <div class="container">
+          <div class="text-center">
+            <h2
+              class="section-heading text-uppercase mb-4"
+              style="color: #eff9f0; 
+              margin-top: -70px; color: #eff9f0;"
+            >
+              How it works
+            </h2>
+            <div style="text-align: center">
+                <h3
+                  style="
+                    margin-bottom: -25px;
+                    padding: 10px;
+                    border-radius: 5px;
+                    text-align: left;
+                    color: #eff9f0;
+                    font-size: 1.5rem;
+                  "
+                >
+                  Reserve your time with me by submitting a $100 deposit, which
+                  will be applied to your total event rate. I'll ensure your event
+                  is seamless, whether it's an indoor or outdoor gathering. I can
+                  work with a provided bar area, a rented setup, or tables
+                  arranged to create the perfect bar experience. Before the event,
+                  I'm happy to answer any questions to ensure everything runs
+                  smoothly. On the day, I’ll arrive an hour early to set up, so
+                  your party is ready to kick off on time!
+                </h3>
+              </div>
+      </section>
 
-      <h4
-        class="section-subheading text-center"
-        style="margin-bottom: -55px; color: #eff9f0"
-      >
-        <span class="dropcap">"</span>
-        To relieve the host of stress by ensuring that all guests have a drink
-        in their hand and are having a great time! "
-      </h4>
-    </section>
-    <!-- How it works-->
-    <section
+      <!-- What we provide -->
+      <section
       class="page-section"
-      id="howitworks"
-      style="background-color: #4c443c"
-    >
-      <div class="container">
-        <div class="text-center">
-          <h2
-            class="section-heading text-uppercase mb-4"
-            style="color: #eff9f0; 
-            margin-top: -70px; color: #eff9f0;"
-          >
-            How it works
-          </h2>
-          <div style="text-align: center">
-              <h3
-                style="
-                  margin-bottom: -25px;
-                  padding: 10px;
-                  border-radius: 5px;
-                  text-align: left;
-                  color: #eff9f0;
-                  font-size: 1.5rem;
-                "
-              >
-                Reserve your time with me by submitting a $100 deposit, which
-                will be applied to your total event rate. I'll ensure your event
-                is seamless, whether it's an indoor or outdoor gathering. I can
-                work with a provided bar area, a rented setup, or tables
-                arranged to create the perfect bar experience. Before the event,
-                I'm happy to answer any questions to ensure everything runs
-                smoothly. On the day, I’ll arrive an hour early to set up, so
-                your party is ready to kick off on time!
-              </h3>
-            </div>
-    </section>
-
-    <!-- What we provide -->
-    <section
-    class="page-section"
-    id="whatweprovide"
-    style="background-image: url(&quot;assets/img/header-bg2-blurred.png&quot;);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;"
-    >
-    <div class="text-center">
-      <h2
-        class="section-heading text-uppercase mb-2 lm-5 lm-5"
-        style="
-          color: #eff9f0;
-          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-          margin-top: -50px; color: #eff9f0;
-          font-size: 2.4rem;
-        "
-              style="
-              background-image: url(&quot;assets/img/header-bg2-blurred.png&quot;);
-              background-size: cover;
-              background-position: center;
-              background-repeat: no-repeat;
-            "
+      id="whatweprovide"
+      style="background-image: url(&quot;assets/img/header-bg2-blurred.png&quot;);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;"
       >
-      What We provide
-      </h2>
-      </div>
-      <p
-      style="
-        margin-top: 30px;
-        width: 70%;
-        margin: 0 auto;
-        padding: 15px;
-        border-radius: 5px;
-        text-align: center;
-        color: #b30000; /* Darker red for readability */
-        background-color: rgba(255, 255, 255, 0.9); /* Light background for contrast */
-        font-size: 1.3rem;
-      "
-      >
-        <strong> DISCLAIMER: Host is responsible for providing all alcohol, mixers, and ice chests. <strong>
-      </p>
-      <div style="
-      display: inline-block;
-      width: 60%; 
-      height: 2px;
-      background-color: #ffffff;
-  "></div>
-
-      <div> 
-        <ul style="list-style-type: none; padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;"></ul>
-        <p
-          style="
-            margin-bottom: 5px;
-            border-radius: 5px;
-            text-align: center;
-            color: #eff9f0;
-            font-size: 1.3rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-          "
-        >
-        All essential bar equipment
-          <span style="font-size: 1rem; color: #c7e5d8; display: block">
-            * See specifics in FAQ section
-          </span>
-        <p
-          style="
-            margin-bottom: 5px;
-            border-radius: 5px;
-            text-align: center;
-            color: #eff9f0;
-            font-size: 1.3rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-          "
-        >
-        Cups, Napkins, Straws
-
-        <p
-          style="
-            margin-bottom: 5px;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            color: #eff9f0;
-            font-size: 1.3rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-          "
-        >
-          Sugar, salt, tajin to rim drinks
-        <p
-          style="
-            margin-bottom: 5px;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            color: #eff9f0;
-            font-size: 1.3rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-          "
-        >
-          All fruit and garnishes
-        <p
-          style="
-            margin-bottom: 5px;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            color: #eff9f0;
-            font-size: 1.3rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-          "
-        >
-          Ice for mixing and making cocktails
-        <p
-          style="
-            margin-bottom: 5px;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            color: #eff9f0;
-            font-size: 1.3rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-          "
-        >
-          Koozies
-      </ul>
-    </div>
       <div class="text-center">
         <h2
-        class="section-heading text-uppercase mb-4"
+          class="section-heading text-uppercase mb-2 lm-5 lm-5"
+          style="
+            color: #eff9f0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            margin-top: -50px; color: #eff9f0;
+            font-size: 2.4rem;
+          "
+                style="
+                background-image: url(&quot;assets/img/header-bg2-blurred.png&quot;);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+              "
+        >
+        What We provide
+        </h2>
+        </div>
+        <h4
         style="
-          color: #eff9f0;
-          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+          margin-top: 30px;
+          width: 70%;
+          margin: 0 auto;
+          padding: 15px;
+          border-radius: 5px;
+          text-align: center;
+          color: #b30000; /* Darker red for readability */
+          background-color: rgba(255, 255, 255, 0.9); /* Light background for contrast */
+          font-size: 1.3rem;
         "
         >
-        Add-ons
-        </h2>
-        <ul style="list-style-type: none; padding: 0"></ul>
-      <div style="
+          <strong> DISCLAIMER: Host is responsible for providing all alcohol, mixers, and ice chests. <strong>
+          </h4>
+          <ul style="list-style-type: none; padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;"></ul>
+          <p
+            style="
+              margin-bottom: 5px;
+              border-radius: 5px;
+              text-align: center;
+              color: #eff9f0;
+              font-size: 1.3rem;
+              text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            "
+          >
+          All essential bar equipment
+            <span style="font-size: 1rem; color: #c7e5d8; display: block">
+              * See specifics in FAQ section
+            </span>
+          <p
+            style="
+              margin-bottom: 5px;
+              border-radius: 5px;
+              text-align: center;
+              color: #eff9f0;
+              font-size: 1.3rem;
+              text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            "
+          >
+          Cups, Napkins, Straws
+
+          <p
+            style="
+              margin-bottom: 5px;
+              padding: 10px;
+              border-radius: 5px;
+              text-align: center;
+              color: #eff9f0;
+              font-size: 1.3rem;
+              text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            "
+          >
+            Sugar, salt, tajin to rim drinks
+          <p
+            style="
+              margin-bottom: 5px;
+              padding: 10px;
+              border-radius: 5px;
+              text-align: center;
+              color: #eff9f0;
+              font-size: 1.3rem;
+              text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            "
+          >
+            All fruit and garnishes
+          <p
+            style="
+              margin-bottom: 5px;
+              padding: 10px;
+              border-radius: 5px;
+              text-align: center;
+              color: #eff9f0;
+              font-size: 1.3rem;
+              text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            "
+          >
+            Ice for mixing and making cocktails
+          <p
+            style="
+              margin-bottom: 5px;
+              padding: 10px;
+              border-radius: 5px;
+              text-align: center;
+              color: #eff9f0;
+              font-size: 1.3rem;
+              text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            "
+          >
+            Koozies
+        </ul>
+      </div>
+        <div class="text-center">
+          <div style="
           display: inline-block;
           width: 60%; 
           height: 2px;
           background-color: #ffffff;
       "></div>
-      <h4
-      style="
-        margin-bottom: 5px;
-        margin-top: 55px;
-        padding: 5px;
-        border-radius: 5px;
-        text-align: center;
-        color: #eff9f0;
-        font-size: 1.7rem;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-      "
-    >
-    Bar Surface Rentals 
-    </h4>
-
-        <p
-        class="with-eight"
-        style="
-          margin-bottom: -5px;
-          padding: 10px;
-          border-radius: 5px;
-          text-align: center;
-          color: #eff9f0;
-          font-size: 1.2rem;
-          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        "
-      >
-        6' foldable table with black, fitted table cloth - <strong> $50 </strong>
-      <p
-        class="with-eight"
-        style="
-          margin-bottom: 40px;
-          padding: 10px;
-          border-radius: 5px;
-          text-align: center;
-          color: #eff9f0;
-          font-size: 1.2rem;
-          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        "
-      >
-        6' x 4' white, foldable wooden bar - <strong> $100 </strong>
-      </ul>
-      <h4
-      style="
-        margin-bottom: 5px;
-        margin-top: 55px;
-        padding: 5px;
-        border-radius: 5px;
-        text-align: center;
-        color: #eff9f0;
-        font-size: 1.7rem;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-      "
-    >
-    Valet Service - $30 / hour
-    </h>
-      </div>
-  </div>
-    </section>
-    <!-- Reviews -->
-    <section
-      class="page-section"
-      id="reviews"
-      style="background-color: #4c443c; height: 500px; overflow-y: auto;"
-    >
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase" style="color: #eff9f0">
-          Client Reviews
-        </h2>
-        <div
-          id="carouselExampleIndicators"
-          class="carousel slide"
-          data-ride="carousel"
-        >
-          <ol class="carousel-indicators">
-            <li
-              data-target="#carouselExampleIndicators"
-              data-slide-to="0"
-              class="active"
-            ></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="card" style="width: 80%; height: 250px; margin: 0 auto">
-                <div class="card-body">
-                  <div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                  </div>
-                  <p class="card-text" style="font-size: 18px">
-                    <span class="quote">&ldquo;</span>Thanks for helping make
-                    our party so much fun!<span class="quote">&rdquo;</span>
-                  </p>
-                  <p class="card-text">- D. Pierce</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card" style="width: 80%; margin: 0 auto">
-                <div class="card-body">
-                  <div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                  </div>
-                  <p class="card-text" style="font-size: 18px">
-                    <span class="quote">&ldquo;</span>I've had the pleasure of
-                    Bronson making my wife and I some cocktails. He is a pure
-                    professional and takes pride in what he does.
-                    <span class="quote">&rdquo;</span>
-                  </p>
-                  <p class="card-text">- C. Marix</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card" style="width: 80%; margin: 0 auto">
-                <div class="card-body">
-                  <div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                  </div>
-                  <p class="card-text" style="font-size: 18px">
-                    <span class="quote">&ldquo;</span>Highly recommend!!!
-                    Fantastic bartender. Super professional. Great personality.
-                    <span class="quote">&rdquo;</span>
-                  </p>
-                  <p class="card-text">- J. Broussard</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card" style="width: 80%; margin: 0 auto">
-                <div class="card-body">
-                  <div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                  </div>
-                  <p class="card-text" style="font-size: 18px">
-                    <span class="quote">&ldquo;</span>Book with Bronson for your
-                    next event! He made our reception 11/10!!!!
-                    <span class="quote">&rdquo;</span>
-                  </p>
-                  <p class="card-text">- R. Ledet</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card" style="width: 80%; margin: 0 auto">
-                <div class="card-body">
-                  <div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                  </div>
-                  <p class="card-text" style="font-size: 18px">
-                    <span class="quote">&ldquo;</span>We hired Bronson to
-                    bartend a private event, and he delivered creative cocktails
-                    and spectacular service. He mixed excellent cocktails and
-                    was engaging with our group. His spicy margarita was
-                    excellent! We would highly recommend Bronson for your next
-                    event, whether a dinner with friends or a company holiday
-                    party. Leave the bartending to him, and spend time enjoying
-                    your company.
-                    <span class="quote">&rdquo;</span>
-                  </p>
-                  <p class="card-text">- B. Alford</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card" style="width: 80%; margin: 0 auto">
-                <div class="card-body">
-                  <div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                  </div>
-                  <p class="card-text" style="font-size: 18px">
-                    <span class="quote">&ldquo;</span>He's the best! Highly
-                    recommend his bartending skills!
-                    <span class="quote">&rdquo;</span>
-                  </p>
-                  <p class="card-text">- E. Knezek</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card" style="width: 80%; margin: 0 auto">
-                <div class="card-body">
-                  <div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                  </div>
-                  <p class="card-text" style="font-size: 18px">
-                    <span class="quote">&ldquo;</span>Bronson, we loved having
-                    you at our event. You are very talented and are a hard
-                    worker. Many thanks!
-                    <span class="quote">&rdquo;</span>
-                  </p>
-                  <p class="card-text">- S. Payne</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card" style="width: 80%; margin: 0 auto">
-                <div class="card-body">
-                  <div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                  </div>
-                  <p class="card-text" style="font-size: 18px">
-                    <span class="quote">&ldquo;</span>Bronson's bartending is
-                    the best of the best mixologist. Bronson was superb and his
-                    craft is beyond what anyone expected. Phenomenal!!! We
-                    cannot give any higher recommendation for your party's
-                    bartending needs.
-                    <span class="quote">&rdquo;</span>
-                  </p>
-                  <p class="card-text">- M. Evans</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card" style="width: 80%; margin: 0 auto">
-                <div class="card-body">
-                  <div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                  </div>
-                  <p class="card-text" style="font-size: 18px">
-                    <span class="quote">&ldquo;</span>I can't recommend Bronson
-                    enough. Everyone loved him and his drinks!
-                    <span class="quote">&rdquo;</span>
-                  </p>
-                  <p class="card-text">- E. Allemand</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <a
-            class="carousel-control-prev"
-            href="#carouselExampleIndicators"
-            role="button"
-            data-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a
-            class="carousel-control-next"
-            href="#carouselExampleIndicators"
-            role="button"
-            data-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section
-      class="page-section"
-      id="faq"
-      style="
-        background-image: url(&quot;assets/img/faq-background.png&quot;);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      "
-    >
-      <div class="container" style="width: 85%">
-        <div class="text-center">
-          <h1 class="section-heading text-uppercase" style="color: #eff9f0">
-            FAQ
-          </h1>
-
-          <details class="card" style="margin-bottom: 20px">
-            <summary style="margin-top: 20px; font-size: 30px">
-              <h3
-                class="section-heading"
-                style="
-                  font-size: 30px;
-                  color: #4c443c;
-                  display: inline-block;
-                  margin-bottom: 20px;
-                "
-              >
-                What equipment/services do you provide?
-              </h3>
-            </summary>
-            <p
-              class="section-subheading"
-              style="font-size: 24px; color: #4c443c"
-            >
-              I provide bar mats, shakers, strainers, all fruit along with a
-              fruit tray, bar rags, bottle openers, and even a cocktail smoking
-              kit. I also provide straws, napkins, and an ice chest with ice for
-              drinks. I am able to make any cocktail with the ingredients I am
-              provided with.
-            </p>
-          </details>
-
-          <details class="card" style="margin-bottom: 20px">
-            <summary style="margin-top: 20px; font-size: 30px">
-              <h3
-                class="section-heading"
-                style="
-                  font-size: 30px;
-                  color: #4c443c;
-                  display: inline-block;
-                  margin-bottom: 20px;
-                "
-              >
-                How much do you charge?
-              </h3>
-            </summary>
-            <p
-              class="section-subheading"
-              style="font-size: 24px; color: #4c443c"
-            >
-              I charge based on the duration of your event, the location, and
-              how many guests will be attending. Contact me today for a free
-              quote!
-            </p>
-          </details>
-
-          <details class="card" style="margin-bottom: 20px">
-            <summary style="margin-top: 20px; font-size: 30px">
-              <h3
-                class="section-heading"
-                style="
-                  font-size: 30px;
-                  color: #4c443c;
-                  display: inline-block;
-                  margin-bottom: 20px;
-                "
-              >
-                How long have you been bartending?
-              </h3>
-            </summary>
-            <p
-              class="section-subheading"
-              style="font-size: 24px; color: #4c443c"
-            >
-              I have been bartending for 3 years now, working in restaurants,
-              event venues, along with my own private events.
-            </p>
-          </details>
-
-          <details class="card" style="margin-bottom: 20px">
-            <summary style="margin-top: 20px; font-size: 30px">
-              <h3
-                class="section-heading"
-                style="
-                  font-size: 30px;
-                  color: #4c443c;
-                  display: inline-block;
-                  margin-bottom: 20px;
-                "
-              >
-                How early can I book an event?
-              </h3>
-            </summary>
-            <p
-              class="section-subheading"
-              style="font-size: 24px; color: #4c443c"
-            >
-              I can book events as far in advance as needed, and will always do
-              my best to accommodate on short notice.
-            </p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact-->
-    <section
-      class="page-section"
-      id="contact"
-      style="background-color: #4c443c"
-    >
-      <div class="container">
-        <div class="text-center">
           <h2
-            class="section-heading text-uppercase"
-            style="margin-top: -20px; color: #eff9f0"
+          class="section-heading text-uppercase mb-4"
+          style="
+            color: #eff9f0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+          "
           >
-            Contact me
+          Add-ons
           </h2>
-          <p class="section-subheading" style="font-size: 18px; color: #eff9f0">
-            Feel free to reach out to me personally if you have any questions.
-          </p>
-          <div class="row justify-content-center">
-            <div class="mb-3">
-              <a
-                class="btn btn-light btn-social"
-                href="https://www.facebook.com/profile.php?id=100092396471212"
-                aria-label="Facebook"
-              >
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <span
-                class="text-light"
-                style="vertical-align: middle; color: #eff9f0"
-                >Like me on Facebook</span
-              >
-            </div>
-            <div class="mb-3">
-              <a
-                class="btn btn-light btn-social"
-                href="https://www.instagram.com/bronsonsbartending"
-                aria-label="Instagram"
-              >
-                <i class="fab fa-instagram"></i>
-              </a>
-              <span
-                class="text-light"
-                style="vertical-align: middle; color: #eff9f0"
-                >Follow me on Instagram</span
-              >
-            </div>
-            <div class="mb-3">
-              <a class="btn btn-light btn-social" aria-label="Phone number">
-                <i class="fa fa-phone-square"></i>
-              </a>
-              <span style="vertical-align: middle; color: #eff9f0"
-                >(337)-940 2190</span
-              >
-            </div>
-            <div class="mb-3">
-              <a class="btn btn-light btn-social" aria-label="Email">
-                <i class="fa fa-envelope"></i>
-              </a>
-              <span style="vertical-align: middle; color: #eff9f0"
-                >bronsonsbartending@gmail.com</span
-              >
-            </div>
+          <ul style="list-style-type: none; padding: 0"></ul>
+        <h4
+        style="
+          margin-bottom: 5px;
+          margin-top: 55px;
+          padding: 5px;
+          border-radius: 5px;
+          text-align: center;
+          color: #eff9f0;
+          font-size: 1.7rem;
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        "
+      >
+      Bar Surface Rentals 
+      </h4>
 
-            <a target="_blank" href="https://www.theknot.com/marketplace/redirect-2089951?utm_source=vendor_website&utm_medium=banner&utm_term=e3b0061b-f831-40fa-9ecb-1bcb901dfc84&utm_campaign=vendor_badge_assets"><img alt="Review us on The Knot" border="0" src="https://d13ns7kbjmbjip.cloudfront.net/For_Your_Website/TK-badge_ReviewUs.png" width="150"></a>
+          <p
+          class="with-eight"
+          style="
+            margin-bottom: -5px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: #eff9f0;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+          "
+        >
+          6' foldable table with black, fitted table cloth - <strong> $50 </strong>
+        <p
+          class="with-eight"
+          style="
+            margin-bottom: 40px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: #eff9f0;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+          "
+        >
+          6' x 4' white, foldable wooden bar - <strong> $100 </strong>
+        </ul>
+        <h4
+        style="
+          margin-bottom: 5px;
+          margin-top: 55px;
+          padding: 5px;
+          border-radius: 5px;
+          text-align: center;
+          color: #eff9f0;
+          font-size: 1.7rem;
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        "
+      >
+      Valet Service - $30 / hour
+      </h>
+        </div>
+    </div>
+      </section>
+      <!-- Reviews -->
+      <section
+        class="page-section"
+        id="reviews"
+        style="background-color: #4c443c; height: 500px; overflow-y: auto;"
+      >
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase" style="color: #eff9f0">
+            Client Reviews
+          </h2>
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide"
+            data-ride="carousel"
+          >
+            <ol class="carousel-indicators">
+              <li
+                data-target="#carouselExampleIndicators"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card" style="width: 80%; height: 250px; margin: 0 auto">
+                  <div class="card-body">
+                    <div>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="card-text" style="font-size: 18px">
+                      <span class="quote">&ldquo;</span>Thanks for helping make
+                      our party so much fun!<span class="quote">&rdquo;</span>
+                    </p>
+                    <p class="card-text">- D. Pierce</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card" style="width: 80%; margin: 0 auto">
+                  <div class="card-body">
+                    <div>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="card-text" style="font-size: 18px">
+                      <span class="quote">&ldquo;</span>I've had the pleasure of
+                      Bronson making my wife and I some cocktails. He is a pure
+                      professional and takes pride in what he does.
+                      <span class="quote">&rdquo;</span>
+                    </p>
+                    <p class="card-text">- C. Marix</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card" style="width: 80%; margin: 0 auto">
+                  <div class="card-body">
+                    <div>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="card-text" style="font-size: 18px">
+                      <span class="quote">&ldquo;</span>Highly recommend!!!
+                      Fantastic bartender. Super professional. Great personality.
+                      <span class="quote">&rdquo;</span>
+                    </p>
+                    <p class="card-text">- J. Broussard</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card" style="width: 80%; margin: 0 auto">
+                  <div class="card-body">
+                    <div>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="card-text" style="font-size: 18px">
+                      <span class="quote">&ldquo;</span>Book with Bronson for your
+                      next event! He made our reception 11/10!!!!
+                      <span class="quote">&rdquo;</span>
+                    </p>
+                    <p class="card-text">- R. Ledet</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card" style="width: 80%; margin: 0 auto">
+                  <div class="card-body">
+                    <div>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="card-text" style="font-size: 18px">
+                      <span class="quote">&ldquo;</span>We hired Bronson to
+                      bartend a private event, and he delivered creative cocktails
+                      and spectacular service. He mixed excellent cocktails and
+                      was engaging with our group. His spicy margarita was
+                      excellent! We would highly recommend Bronson for your next
+                      event, whether a dinner with friends or a company holiday
+                      party. Leave the bartending to him, and spend time enjoying
+                      your company.
+                      <span class="quote">&rdquo;</span>
+                    </p>
+                    <p class="card-text">- B. Alford</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card" style="width: 80%; margin: 0 auto">
+                  <div class="card-body">
+                    <div>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="card-text" style="font-size: 18px">
+                      <span class="quote">&ldquo;</span>He's the best! Highly
+                      recommend his bartending skills!
+                      <span class="quote">&rdquo;</span>
+                    </p>
+                    <p class="card-text">- E. Knezek</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card" style="width: 80%; margin: 0 auto">
+                  <div class="card-body">
+                    <div>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="card-text" style="font-size: 18px">
+                      <span class="quote">&ldquo;</span>Bronson, we loved having
+                      you at our event. You are very talented and are a hard
+                      worker. Many thanks!
+                      <span class="quote">&rdquo;</span>
+                    </p>
+                    <p class="card-text">- S. Payne</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card" style="width: 80%; margin: 0 auto">
+                  <div class="card-body">
+                    <div>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="card-text" style="font-size: 18px">
+                      <span class="quote">&ldquo;</span>Bronson's bartending is
+                      the best of the best mixologist. Bronson was superb and his
+                      craft is beyond what anyone expected. Phenomenal!!! We
+                      cannot give any higher recommendation for your party's
+                      bartending needs.
+                      <span class="quote">&rdquo;</span>
+                    </p>
+                    <p class="card-text">- M. Evans</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card" style="width: 80%; margin: 0 auto">
+                  <div class="card-body">
+                    <div>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="card-text" style="font-size: 18px">
+                      <span class="quote">&ldquo;</span>I can't recommend Bronson
+                      enough. Everyone loved him and his drinks!
+                      <span class="quote">&rdquo;</span>
+                    </p>
+                    <p class="card-text">- E. Allemand</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#carouselExampleIndicators"
+              role="button"
+              data-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carouselExampleIndicators"
+              role="button"
+              data-slide="next"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Footer-->
-    <footer class="footer py-4" style="background-color: #4c443c" ;>
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-lg-4 text-light text-center">
-            Copyright &copy; Bronson's Bartending 2024
+      <!-- FAQ -->
+      <section
+        class="page-section"
+        id="faq"
+        style="
+          background-image: url(&quot;assets/img/faq-background.png&quot;);
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        "
+      >
+        <div class="container" style="width: 85%">
+          <div class="text-center">
+            <h1 class="section-heading text-uppercase" style="color: #eff9f0">
+              FAQ
+            </h1>
+
+            <details class="card" style="margin-bottom: 20px">
+              <summary style="margin-top: 20px; font-size: 30px">
+                <h3
+                  class="section-heading"
+                  style="
+                    font-size: 30px;
+                    color: #4c443c;
+                    display: inline-block;
+                    margin-bottom: 20px;
+                  "
+                >
+                  What equipment/services do you provide?
+                </h3>
+              </summary>
+              <p
+                class="section-subheading"
+                style="font-size: 24px; color: #4c443c"
+              >
+                I provide bar mats, shakers, strainers, all fruit along with a
+                fruit tray, bar rags, bottle openers, and even a cocktail smoking
+                kit. I also provide straws, napkins, and an ice chest with ice for
+                drinks. I am able to make any cocktail with the ingredients I am
+                provided with.
+              </p>
+            </details>
+
+            <details class="card" style="margin-bottom: 20px">
+              <summary style="margin-top: 20px; font-size: 30px">
+                <h3
+                  class="section-heading"
+                  style="
+                    font-size: 30px;
+                    color: #4c443c;
+                    display: inline-block;
+                    margin-bottom: 20px;
+                  "
+                >
+                  How much do you charge?
+                </h3>
+              </summary>
+              <p
+                class="section-subheading"
+                style="font-size: 24px; color: #4c443c"
+              >
+                I charge based on the duration of your event, the location, and
+                how many guests will be attending. Contact me today for a free
+                quote!
+              </p>
+            </details>
+
+            <details class="card" style="margin-bottom: 20px">
+              <summary style="margin-top: 20px; font-size: 30px">
+                <h3
+                  class="section-heading"
+                  style="
+                    font-size: 30px;
+                    color: #4c443c;
+                    display: inline-block;
+                    margin-bottom: 20px;
+                  "
+                >
+                  How long have you been bartending?
+                </h3>
+              </summary>
+              <p
+                class="section-subheading"
+                style="font-size: 24px; color: #4c443c"
+              >
+                I have been bartending for 3 years now, working in restaurants,
+                event venues, along with my own private events.
+              </p>
+            </details>
+
+            <details class="card" style="margin-bottom: 20px">
+              <summary style="margin-top: 20px; font-size: 30px">
+                <h3
+                  class="section-heading"
+                  style="
+                    font-size: 30px;
+                    color: #4c443c;
+                    display: inline-block;
+                    margin-bottom: 20px;
+                  "
+                >
+                  How early can I book an event?
+                </h3>
+              </summary>
+              <p
+                class="section-subheading"
+                style="font-size: 24px; color: #4c443c"
+              >
+                I can book events as far in advance as needed, and will always do
+                my best to accommodate on short notice.
+              </p>
+            </details>
           </div>
         </div>
-      </div>
-    </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-      // Wait for the DOM to be fully loaded
-      document.addEventListener('DOMContentLoaded', function () {
-    
-        // Get the modal
-        const modal = document.getElementById('myModal');
-    
-        // Get the button that opens the modal
-        const openModalBtn = document.getElementById('openModalBtn');
-    
-        // Get the <span> element that closes the modal
-        const closeModalBtn = document.getElementById('closeModalBtn');
-    
-        // When the user clicks the button, open the modal
-        openModalBtn.addEventListener('click', function () {
-          modal.style.display = 'block';
-        });
-    
-        // When the user clicks on <span> (x), close the modal
-        closeModalBtn.addEventListener('click', function () {
-          modal.style.display = 'none';
-        });
-    
-        // When the user clicks anywhere outside of the modal, close it
-        window.addEventListener('click', function (event) {
-          if (event.target === modal) {
+      </section>
+
+      <!-- Contact-->
+      <section
+        class="page-section"
+        id="contact"
+        style="background-color: #4c443c"
+      >
+        <div class="container">
+          <div class="text-center">
+            <h2
+              class="section-heading text-uppercase"
+              style="margin-top: -20px; color: #eff9f0"
+            >
+              Contact me
+            </h2>
+            <p class="section-subheading" style="font-size: 18px; color: #eff9f0">
+              Feel free to reach out to me personally if you have any questions.
+            </p>
+            <div class="row justify-content-center">
+              <div class="mb-3">
+                <a
+                  class="btn btn-light btn-social"
+                  href="https://www.facebook.com/profile.php?id=100092396471212"
+                  aria-label="Facebook"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <span
+                  class="text-light"
+                  style="vertical-align: middle; color: #eff9f0"
+                  >Like me on Facebook</span
+                >
+              </div>
+              <div class="mb-3">
+                <a
+                  class="btn btn-light btn-social"
+                  href="https://www.instagram.com/bronsonsbartending"
+                  aria-label="Instagram"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <span
+                  class="text-light"
+                  style="vertical-align: middle; color: #eff9f0"
+                  >Follow me on Instagram</span
+                >
+              </div>
+              <div class="mb-3">
+                <a class="btn btn-light btn-social" aria-label="Phone number">
+                  <i class="fa fa-phone-square"></i>
+                </a>
+                <span style="vertical-align: middle; color: #eff9f0"
+                  >(337)-940 2190</span
+                >
+              </div>
+              <div class="mb-3">
+                <a class="btn btn-light btn-social" aria-label="Email">
+                  <i class="fa fa-envelope"></i>
+                </a>
+                <span style="vertical-align: middle; color: #eff9f0"
+                  >bronsonsbartending@gmail.com</span
+                >
+              </div>
+
+              <a target="_blank" href="https://www.theknot.com/marketplace/redirect-2089951?utm_source=vendor_website&utm_medium=banner&utm_term=e3b0061b-f831-40fa-9ecb-1bcb901dfc84&utm_campaign=vendor_badge_assets"><img alt="Review us on The Knot" border="0" src="https://d13ns7kbjmbjip.cloudfront.net/For_Your_Website/TK-badge_ReviewUs.png" width="150"></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer-->
+      <footer class="footer py-4" style="background-color: #4c443c" ;>
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-4 text-light text-center">
+              Copyright &copy; Bronson's Bartending 2024
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- Bootstrap core JS-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Core theme JS-->
+      <script src="js/scripts.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function () {
+      
+          // Get the modal
+          const modal = document.getElementById('myModal');
+      
+          // Get the button that opens the modal
+          const openModalBtn = document.getElementById('openModalBtn');
+      
+          // Get the <span> element that closes the modal
+          const closeModalBtn = document.getElementById('closeModalBtn');
+      
+          // When the user clicks the button, open the modal
+          openModalBtn.addEventListener('click', function () {
+            modal.style.display = 'block';
+          });
+      
+          // When the user clicks on <span> (x), close the modal
+          closeModalBtn.addEventListener('click', function () {
             modal.style.display = 'none';
-          }
+          });
+      
+          // When the user clicks anywhere outside of the modal, close it
+          window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+              modal.style.display = 'none';
+            }
+          });
         });
-      });
-    </script>
-  </body>
-</html>
+      </script>
+    </body>
+  </html>
