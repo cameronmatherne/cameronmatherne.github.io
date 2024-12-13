@@ -2,6 +2,65 @@
 <html lang="en">
   <head>
     <style>
+    /* Basic styling for modal */
+        #myModal .modal-content {
+      background-color: #4c443c;
+    }
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4); /* Background color with transparency */
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+    }
+
+    .close-btn {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      transition: color 0.3s ease;
+    }
+
+    .close-btn:hover,
+    .close-btn:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Style for the button */
+    button {
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ffffffa7;
+    }
       /* Style for the dropdown */
       .dropdown {
         position: relative;
@@ -24,6 +83,10 @@
       .checked {
         color: orange;
       }
+
+      body {
+  font-family: Arial, sans-serif;
+}
     </style>
     <meta charset="utf-8" />
     <meta
@@ -131,6 +194,16 @@
             <li class="nav-item">
               <a class="nav-link" href="#contact">CONTACT</a>
             </li>
+            <li class="nav-item">
+              <a
+              class="btn btn-secondary btn-m"
+              style="border-width: 2px"
+              href="https://calendly.com/bronsons"
+              target="_blank"
+              
+              >Schedule Now</a
+            >
+            </li>
           </ul>
         </div>
       </div>
@@ -141,13 +214,74 @@
         <div class="masthead-heading text-uppercase">
           <p>Book with Bronson</p>
         </div>
-        <a
-          class="btn btn-light btn-xl"
-          style="border-width: 2px"
-          href="https://calendly.com/bronsons"
-          target="_blank"
-          >Schedule Now</a
-        >
+        <div
+        style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;">
+        <!--
+          <button id="openModalBtn" class="btn btn-light" style="margin-bottom: 20px;">Get a Quote</button>
+
+          -->
+          <a
+            class="btn btn-secondary btn-xl"
+            style="border-width: 2px"
+            href="https://calendly.com/bronsons"
+            target="_blank"
+            >Schedule Now</a
+          >
+          
+        </div>
+        <!-- Modal Structure -->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>Get a Quote</h2>        
+            <!-- Form Starts Here -->
+            <form id="eventForm">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required><br><br>
+        
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required><br><br>
+        
+              <label for="eventEnd">What is the anticipated start/end time of your event?</label>
+              <input type="text" id="eventEnd" name="eventEnd"><br><br>
+        
+              <label for="address">What is the address of your event?</label>
+              <input type="text" id="address" name="address" required><br><br>
+        
+              <label for="attendees">How many guests will be attending this event? *if over 80, additional bartender required.</label>
+              <input type="number" id="attendees" name="attendees" min="1" required><br><br>
+        
+              <label for="celebration">What are we celebrating at this event?</label>
+              <textarea id="celebration" name="celebration"></textarea><br><br>
+        
+              <label for="cocktails">What kind of cocktails do you want to be served at this event?</label>
+              <textarea id="cocktails" name="cocktails" required></textarea><br><br>
+        
+              <label for="addons">Would you like to include any optional add-ons?</label><br>
+              <input type="checkbox" id="barSetUp" name="addons" value="Bar Set Up">
+              <label for="barSetUp">6' foldable bar table rental ($50)</label><br>
+              <input type="checkbox" id="mixers" name="addons" value="Mixers">
+              <label for="mixers">6' x 4' bar table rental ($100)</label><br>
+              <input type="checkbox" id="glassware" name="addons" value="Glassware">
+              <label for="glassware">Valet service ( $30 / hour)</label><br><br>
+              <button type="submit">Submit</button>
+              <p
+              style="
+                margin-top: 20px;
+                color: #b30000; /* Darker red for readability */   
+              "
+              >
+                <strong> You will receive a final quote via email / text message.<strong>
+              </p>
+            </form>
+            <!-- Form Ends Here -->
+        
+          </div>
+        </div>
       </div>
       <div class="d-flex justify-content-center mb-5 mx-2">
         <div>
@@ -178,6 +312,7 @@
           >
             <i class="fa fa-phone-square"></i>
           </a>
+
         </div>
         <div>
           <a
@@ -186,6 +321,16 @@
             style="margin: 10px"
           >
             <i class="fa fa-envelope"></i>
+          </a>
+        </div>
+        <div style="margin-top: 9px; margin-left: 8px;" >
+          <a target="_blank"href="https://www.theknot.com/marketplace/redirect-2089951?utm_source=vendor_website&utm_medium=banner&utm_term=e3b0061b-f831-40fa-9ecb-1bcb901dfc84&utm_campaign=vendor_badge_assets"><img alt="TheKnot.com" border="0" height="40" src="https://d13ns7kbjmbjip.cloudfront.net/For_Your_Website/TK-icon_circle_medium.png"></a>
+
+        </div>
+        <div style="position: relative; height: 200px;">
+          <a target="_blank" href="https://www.theknot.com/marketplace/redirect-2089951?utm_source=vendor_website&utm_medium=banner&utm_term=e3b0061b-f831-40fa-9ecb-1bcb901dfc84&utm_campaign=vendor_badge_assets">
+            <img alt="As Seen on The Knot" border="0" src="https://d13ns7kbjmbjip.cloudfront.net/For_Your_Website/TK-badge_AsSeen.png" width="100" 
+                 style="position: absolute; top: 220px; right: 220px;">
           </a>
         </div>
       </div>
@@ -274,6 +419,24 @@
       What We provide
       </h2>
       </div>
+      <p
+      style="
+        margin-top: 30px;
+        width: 70%;
+        margin: 0 auto;
+        padding: 15px;
+        border-radius: 5px;
+        text-align: center;
+        color: #b30000; /* Darker red for readability */
+        background-color: rgba(255, 255, 255, 0.9); /* Light background for contrast */
+        font-size: 1.3rem;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      "
+      >
+        <strong> DISCLAIMER: Host is responsible for providing all alcohol and mixers, as well as ice chests. <strong>
+        <strong>If you would like recommendations or guidance on what to get or how much to get, I would be happy to assist.
+          We also do not provide a bar unless rented.<strong>
+      </p>
 
       <div> 
         <ul style="list-style-type: none; padding: 0;
@@ -367,78 +530,12 @@
         Add-ons
         </h2>
         <ul style="list-style-type: none; padding: 0"></ul>
-          <h4
-          style="
-              margin-bottom: -15px;
-              margin-top: -5px;
-              padding: 10px;
-              border-radius: 5px;
-              text-align: center;
-              color: #eff9f0;
-              font-size: 1.5rem;
-              text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-          "
-      >
-          Glassware for up to 50 guests
-      </h4>
       <div style="
           display: inline-block;
           width: 60%; 
           height: 2px;
           background-color: #ffffff;
       "></div>
-        <p
-        style="
-          margin-bottom: 10px;
-          padding: 10px;
-          border-radius: 5px;
-          text-align: center;
-          color: #eff9f0;
-          font-size: 1.3rem;
-          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        "
-        >
-        <strong>$3.00 per guest</strong>
-        <p
-        class="with-eight"
-        style="
-          margin-bottom: -5px;
-          padding: 10px;
-          border-radius: 5px;
-          text-align: center;
-          color: #eff9f0;
-          font-size: 1.0rem;
-          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        "
-      >
-        Martini glasses
-      <p
-        class="with-eight"
-        style="
-          margin-bottom: -5px;
-          padding: 10px;
-          border-radius: 5px;
-          text-align: center;
-          color: #eff9f0;
-          font-size: 1.0rem;
-          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        "
-      >
-        Rocks glasses 
-      <p
-      class="with-eight"
-      style="
-        margin-bottom: 15px;
-        padding: 10px;
-        border-radius: 5px;
-        text-align: center;
-        color: #eff9f0;
-        font-size: 1.0rem;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-      "
-      >
-      Champagne flutes
-      </ul>
       <h4
       style="
         margin-bottom: 5px;
@@ -447,11 +544,11 @@
         border-radius: 5px;
         text-align: center;
         color: #eff9f0;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
       "
     >
-    Bar Set Up Options 
+    Bar Surface Rentals 
     </h4>
 
         <p
@@ -462,7 +559,7 @@
           border-radius: 5px;
           text-align: center;
           color: #eff9f0;
-          font-size: 1.0rem;
+          font-size: 1.2rem;
           text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         "
       >
@@ -475,31 +572,27 @@
           border-radius: 5px;
           text-align: center;
           color: #eff9f0;
-          font-size: 1.0rem;
+          font-size: 1.2rem;
           text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         "
       >
         6' x 4' white, foldable wooden bar - <strong> $100 </strong>
       </ul>
-      </div>
-      <p
+      <h4
       style="
-        margin-top: 30px;
-        width: 70%;
-        margin: 0 auto;
-        padding: 15px;
+        margin-bottom: 5px;
+        margin-top: 55px;
+        padding: 5px;
         border-radius: 5px;
         text-align: center;
-        color: #b30000; /* Darker red for readability */
-        background-color: rgba(255, 255, 255, 0.9); /* Light background for contrast */
-        font-size: 1.3rem;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        color: #eff9f0;
+        font-size: 1.7rem;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
       "
-      >
-        <strong> DISCLAIMER: Host is responsible for providing all alcohol and mixers, as well as ice chests. <strong>
-        <strong>If you would like recommendations or guidance on what to get or how much to get, I would be happy to assist.
-          We also do not provide a bar unless rented.<strong>
-      </p>
+    >
+    Valet Service - $30 / hour
+    </h>
+      </div>
   </div>
     </section>
     <!-- Reviews -->
@@ -909,6 +1002,8 @@
                 >bronsonsbartending@gmail.com</span
               >
             </div>
+
+            <a target="_blank" href="https://www.theknot.com/marketplace/redirect-2089951?utm_source=vendor_website&utm_medium=banner&utm_term=e3b0061b-f831-40fa-9ecb-1bcb901dfc84&utm_campaign=vendor_badge_assets"><img alt="Review us on The Knot" border="0" src="https://d13ns7kbjmbjip.cloudfront.net/For_Your_Website/TK-badge_ReviewUs.png" width="150"></a>
           </div>
         </div>
       </div>
@@ -931,5 +1026,36 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      // Wait for the DOM to be fully loaded
+      document.addEventListener('DOMContentLoaded', function () {
+    
+        // Get the modal
+        const modal = document.getElementById('myModal');
+    
+        // Get the button that opens the modal
+        const openModalBtn = document.getElementById('openModalBtn');
+    
+        // Get the <span> element that closes the modal
+        const closeModalBtn = document.getElementById('closeModalBtn');
+    
+        // When the user clicks the button, open the modal
+        openModalBtn.addEventListener('click', function () {
+          modal.style.display = 'block';
+        });
+    
+        // When the user clicks on <span> (x), close the modal
+        closeModalBtn.addEventListener('click', function () {
+          modal.style.display = 'none';
+        });
+    
+        // When the user clicks anywhere outside of the modal, close it
+        window.addEventListener('click', function (event) {
+          if (event.target === modal) {
+            modal.style.display = 'none';
+          }
+        });
+      });
+    </script>
   </body>
 </html>
