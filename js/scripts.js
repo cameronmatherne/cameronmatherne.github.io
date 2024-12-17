@@ -46,29 +46,3 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
-
-const modal = document.getElementById("modal");
-const openModalButton = document.getElementById("openModal");
-const closeModalButton = document.getElementById("closeModal");
-const modalForm = document.getElementById("modalForm");
-const thankYouMessage = document.getElementById("thankYouMessage");
-
-openModalButton.addEventListener("click", () => {
-  modal.style.display = "flex";
-});
-
-closeModalButton.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
-modalForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  modalForm.style.display = "none";
-  thankYouMessage.classList.remove("hidden");
-});
-
-window.addEventListener("click", (event) => {
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
-});
