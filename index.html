@@ -318,12 +318,12 @@
           
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="user_email" required><br><br>
-          
-                <label for="eventEnd">What is the anticipated start/end time of your event?</label>
-                <input type="text" id="eventEnd" name="eventEnd"><br><br>
 
                 <label for="eventdate">What is the anticipated date of your event?</label>
                 <input type="date" id="eventdate" name="eventdate"><br><br>
+          
+                <label for="eventEnd">What is the anticipated start/end time of your event?</label>
+                <input type="text" id="eventEnd" name="eventEnd"><br><br>
           
                 <label for="address">What is the address of your event?</label>
                 <input type="text" id="address" name="address" required><br><br>
@@ -336,6 +336,13 @@
           
                 <label for="cocktails">What kind of cocktails do you want to be served at this event?</label>
                 <textarea id="cocktails" name="cocktails" required></textarea><br><br>
+
+                <label for="terrain">Will your event be indoors or outdoors?</label><br>
+                <select id="terrain" name="terrain" required>
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="indoors">Indoors</option>
+                  <option value="outdoors">Outdoors</option>
+                </select><br><br>
 
                 <label for="tip_jar">Is a tip jar allowed?</label><br>
                 <select id="tip_jar" name="tip_jar" required>
@@ -350,7 +357,7 @@
                 <label for="barSetUp">6' foldable bar table rental ($50)</label><br>
                 
                 <input type="checkbox" id="wood" name="addons" value="Wood Table">
-                <label for="wood">6' x 4' white, wooden bar table rental ($100)</label><br>
+                <label for="wood">6' x 4' white, wooden bar table rental ($200)</label><br>
 
                 <input type="checkbox" id="valet" name="addons" value="Valet Service">
                 <label for="valet">Valet service ( $30 / hour)</label><br><br>
@@ -676,7 +683,7 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
           "
         >
-          6' x 4' white, foldable wooden bar - <strong> $100 </strong>
+          6' x 4' white, foldable wooden bar - <strong> $200 </strong>
         </ul>
         <h4
         style="
