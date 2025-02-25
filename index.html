@@ -385,6 +385,9 @@
                   <option value="outdoors">Outdoors</option>
                 </select><br><br>
 
+                <label for="stations">How many bars/ bar areas will there be?</label>
+                <input type="number" id="stations" name="stations" min="1" required><br><br>
+
                 <label for="tip_jar">Is a tip jar allowed?</label><br>
                 <select id="tip_jar" name="tip_jar" required>
                   <option value="" disabled selected>Select an option</option>
@@ -398,10 +401,7 @@
                 <label for="barSetUp">6' foldable bar table rental ($50)</label><br>
                 
                 <input type="checkbox" id="wood" name="addons" value="Wood Table">
-                <label for="wood">6' x 4' white, wooden bar table rental ($150 | only available in Lafayette, LA)</label><br>
-
-                <input type="checkbox" id="valet" name="addons" value="Valet Service">
-                <label for="valet">Valet service ( $30 / hour)</label><br><br>
+                <label for="wood">6' x 4' white, wooden bar table rental (only available in Lafayette, LA)</label><br>
 
                 <button  style="margin-bottom: 20px" type="submit">Submit</button>
 
@@ -666,7 +666,7 @@
                 text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
               "
             >
-            Bartender(s) for duration of the event
+            Professional bartender(s) for duration of the event
           <p
             style="
               margin-bottom: 5px;
@@ -693,6 +693,18 @@
           >
           Cups, Napkins, Straws
 
+          <p
+            style="
+              margin-bottom: 5px;
+              padding: 10px;
+              border-radius: 5px;
+              text-align: center;
+              color: #eff9f0;
+              font-size: 1.3rem;
+              text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            "
+          >
+          Ice for mixing and making drinks
           <p
             style="
               margin-bottom: 5px;
@@ -778,20 +790,7 @@
         >
           6' x 4' white, foldable wooden bar - <strong> $150 ($150 | only available in Lafayette, LA) </strong>
         </ul>
-        <h4
-        style="
-          margin-bottom: 5px;
-          margin-top: 55px;
-          padding: 5px;
-          border-radius: 5px;
-          text-align: center;
-          color: #eff9f0;
-          font-size: 1.7rem;
-          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        "
-      >
-      Valet Service - $30 / hour (Louisiana Only)
-      </h>
+
         </div>
     </div>
       </section>
