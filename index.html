@@ -366,11 +366,14 @@
                 <label for="eventEnd">What is the anticipated end time of your event?</label>
                 <input type="time" id="eventEnd" name="eventEnd"><br><br>
           
-                <label for="address">What is the city and state of your event?</label>
-                <input type="text" id="address" name="address" required><br><br>
+                <label for="location">What is the city and state of your event?</label>
+                <input type="text" id="location" name="location" required><br><br>
           
                 <label for="attendees">How many guests will be attending this event? *if over 80, additional bartender required.</label>
                 <input type="number" id="attendees" name="attendees" min="1" required><br><br>
+
+                <label for="areas">How many bars/bar areas will there be?</label>
+                <input type="number" id="areas" name="areas" min="1" required><br><br>
           
                 <label for="celebration">What are we celebrating at this event?</label>
                 <textarea id="celebration" name="celebration"></textarea><br><br>
@@ -399,9 +402,6 @@
                 
                 <input type="checkbox" id="wood" name="addons" value="Wood Table">
                 <label for="wood">6' x 4' white, wooden bar table rental ($150 | only available in Lafayette, LA)</label><br>
-
-                <input type="checkbox" id="valet" name="addons" value="Valet Service">
-                <label for="valet">Valet service ( $30 / hour)</label><br><br>
 
                 <button  style="margin-bottom: 20px" type="submit">Submit</button>
 
@@ -666,7 +666,7 @@
                 text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
               "
             >
-            Bartender(s) for duration of the event
+            Professional bartender(s) for duration of the event
           <p
             style="
               margin-bottom: 5px;
@@ -692,7 +692,6 @@
             "
           >
           Cups, Napkins, Straws
-
           <p
             style="
               margin-bottom: 5px;
@@ -716,7 +715,19 @@
               text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
             "
           >
-            All fruit and garnishes for the cocktails being served at the event
+          All fruit and garnishes for the cocktails being served at the event
+          <p
+          style="
+            margin-bottom: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: #eff9f0;
+            font-size: 1.3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+          "
+        >
+          Ice for mixing and making drinks
         </ul>
       </div>
         <div class="text-center">
@@ -776,22 +787,8 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
           "
         >
-          6' x 4' white, foldable wooden bar - <strong> $150 ($150 | only available in Lafayette, LA) </strong>
+          6' x 4' white, foldable wooden bar - <strong> ($150 | only available in Lafayette, LA) </strong>
         </ul>
-        <h4
-        style="
-          margin-bottom: 5px;
-          margin-top: 55px;
-          padding: 5px;
-          border-radius: 5px;
-          text-align: center;
-          color: #eff9f0;
-          font-size: 1.7rem;
-          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        "
-      >
-      Valet Service - $30 / hour (Louisiana Only)
-      </h>
         </div>
     </div>
       </section>
