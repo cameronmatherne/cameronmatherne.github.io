@@ -1279,5 +1279,12 @@
 
         });
       </script>
+      <script>
+        document.getElementById('openModalBtn').addEventListener('click', function() {
+          fbq('trackCustom', 'GetQuoteClicked', {
+            buttonName: 'Get a Quote'
+          });
+        });
+      </script>
     </body>
   </html>
