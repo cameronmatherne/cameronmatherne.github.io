@@ -439,26 +439,27 @@
                   <option value="no">No</option>
                 </select><br><br>
           
-                <label for="addons">Would you like to include any optional add-ons?</label><br>
+                <form id="addonsForm">
+                  <label for="addons">Would you like to include any optional add-ons?</label><br>
 
-                <input type="checkbox" id="cupsNapkinsStraws" name="cupsNapkinsStraws" value="Cups/napkins/straws">
-                <label for="cupsNapkinsStraws">Cups/nakins/straws ($1.25/guest)</label><br>
+                  <input type="checkbox" id="cupsNapkinsStraws" name="addons" value="Cups/napkins/straws">
+                  <label for="cupsNapkinsStraws">Cups/nakins/straws ($1.25/guest)</label><br>
 
-                <input type="checkbox" id="ice" name="ice" value="Ice">
-                <label for="ice">Ice ($50)</label><br>
+                  <input type="checkbox" id="ice" name="addons" value="Ice">
+                  <label for="ice">Ice ($50)</label><br>
 
-                <input type="checkbox" id="fruits" name="fruits" value="Fruits & Garnishes">
-                <label for="fruits">Fruits & Garnishes ($1/guest)</label><br>
+                  <input type="checkbox" id="fruits" name="addons" value="Fruits & Garnishes">
+                  <label for="fruits">Fruits & Garnishes ($1/guest)</label><br>
 
-                <input type="checkbox" id="koozies" name="koozies" value="Koozies">
-                <label for="koozies">50ct koozies ($75)</label><br>
+                  <input type="checkbox" id="koozies" name="addons" value="Koozies">
+                  <label for="koozies">50ct koozies ($75)</label><br>
 
-                <input type="checkbox" id="barsetup" name="barsetup" value="Foldable Table">
-                <label for="barsetup">6' foldable bar table rental ($50)</label><br>
-            
-                <button  style="margin-bottom: 20px" type="submit">Submit</button>
-
-                <h4
+                  <input type="checkbox" id="barsetup" name="addons" value="Foldable Table">
+                  <label for="barsetup">6' foldable bar table rental ($50)</label><br>
+              
+                  <button  style="margin-bottom: 20px" type="submit">Submit</button>
+                </form>     
+        <h4
         style="
           margin-top: 70px;
           width: 70%;
