@@ -1,6 +1,6 @@
 ---
 layout: recipe
-title: HIGH-PROTEIN HAMBURGER HELPER
+title: HOMEMADE HAMBURGER HELPER
 image: photo-missing.jpg
 tags:
   - mains
