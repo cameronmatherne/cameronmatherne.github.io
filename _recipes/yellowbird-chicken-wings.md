@@ -1,7 +1,7 @@
 ---
 layout: recipe
-title: Yellowbird Chicken Wings
-image: yellowbird-chicken-wings.jpg
+title: YELLOWBIRD CHICKEN WINGS
+image: photo-missing.jpg
 tags:
   - mains
   - meat

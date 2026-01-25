@@ -1,9 +1,10 @@
 ---
 layout: default
 ---
-
   <div class="content w-full md:w-4/5 h-full overflow-scroll">
-      
+    <h1 class="recipe-title font-gelica text-primary text-left text-5xl lg:text-7xl font-extrabold mt-6">
+      CAMERON'S RECIPES
+    </h1>
       <div class="recipes mb-24 py-8">
           <h2 class="text-red-950 md:text-primary uppercase font-semibold mb-2 px-6">Most Recent</h2>
 
@@ -18,11 +19,7 @@ layout: default
               </a>
             {% endfor %}
           </div>
-
-
           <div class="grid px-6 h-full grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-
-
             {% assign sorted = site.recipes | sort:"date" %}
               {% for post in sorted offset:3 %}
                 <a class="recipe md:hover:scale-105 md:hover:rotate-1 transition" href="{{ post.url | prepend: site.baseurl }}">
