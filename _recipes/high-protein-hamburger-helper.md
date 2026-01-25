@@ -29,6 +29,5 @@ directions:
   - Taste and adjust seasoning if needed. Serve hot.
 ---
 
-A **healthy twist on classic Hamburger Helper**, this version is high in protein, low in calories, and packed with veggies. Perfect for a weeknight dinner that fills you up without the guilt!
+A **healthy twist on classic Hamburger Helper**, this version is high in protein and low in calories. Perfect for a weeknight dinner that fills you up without the guilt!
 
-You can swap cauliflower rice for whole wheat pasta if you want more carbs, or add extra spices for a flavor kick. Enjoy a comforting, creamy meal **without sacrificing your nutrition goals**.
