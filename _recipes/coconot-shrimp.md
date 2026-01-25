@@ -1,7 +1,7 @@
 ---
 layout: recipe
 title: HIGH-PROTEIN SHEET-PAN SHRIMP & SWEET POTATOES
-image: photo-missing.jpg
+image: coconut-shrimp.jpg
 tags:
   - mains
   - seafood
