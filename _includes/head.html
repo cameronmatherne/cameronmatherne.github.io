@@ -67,24 +67,11 @@
       }
     }
   </script>
-
-  <!-- Memberful Gating CSS -->
-  <!-- <style>
-    .member-only { display: none; }
-    .has-full-access .member-only { display: block; }
-    .preview-only { display: block; }
-    .has-full-access .preview-only { display: none; }
-
-    @view-transition { navigation: auto; }
-    .overflow-scroll::-webkit-scrollbar { display: none; }
-    .overflow-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-  </style> -->
 </head>
 
 <body class="flex h-full font-inter bg-orange-50 text-orange-950">
   <!-- Sidebar Nav -->
-  <nav class="w-full md:w-1/4 lg:w-1/5 md:h-full bg-orange-50 fixed md:relative left-0 bottom-0 flex md:flex-col justify-between md:justify-start px-6 py-4 md:p-8 md:gap-4 z-10 shadow-3xl md:shadow-none {% if page.url contains '/recipes/' %}md:hidden{% endif %}">
-    
+  <nav class="w-full md:w-56 lg:w-64 md:h-full bg-orange-50 fixed md:relative left-0 bottom-0 flex md:flex-col justify-between md:justify-start px-4 py-3 md:px-6 md:py-6 md:gap-4 z-10 shadow-3xl md:shadow-none {% if page.url contains '/recipes/' %}md:hidden{% endif %}">
     <a href="/" class="flex flex-col md:flex-row items-center gap-0 md:gap-2 {% if page.url == '/' %}text-primary{% endif %}">
       <svg class="w-12 md:w-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M18 16.25H15V7.5H12V16.25H9V7.5H6V16.25C6 18.9 8.49 21.05 11.625 21.2125V32.5H15.375V21.2125C18.51 21.05 21 18.9 21 16.25V7.5H18V16.25ZM25.5 12.5V22.5H29.25V32.5H33V7.5C28.86 7.5 25.5 10.3 25.5 12.5Z" fill="currentColor" />
@@ -106,18 +93,6 @@
         <span class="label text-sm md:text-2xl font-medium md:font-gelica">Books</span>
       </svg>
     </a>
-
-    <!-- Memberful Button -->
-    <a href="javascript:void(0)" 
-    class="flex flex-col md:flex-row items-center gap-0 md:gap-2 memberful-button" 
-    data-memberful-product="144066-full-content-access">
-      <svg class="w-12 md:w-10" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4ZM24 40C14.0589 40 6 31.9411 6 22.9999C6 14.0588 14.0589 6 24 6C33.9411 6 42 14.0588 42 22.9999C42 31.9411 33.9411 40 24 40Z" fill="#212121"/>
-        <path d="M24 12C19.5817 12 16 15.5817 16 20C16 24.4183 19.5817 28 24 28C28.4183 28 32 24.4183 32 20C32 15.5817 28.4183 12 24 12ZM24 24C21.7909 24 20 22.2091 20 20C20 17.7909 21.7909 16 24 16C26.2091 16 28 17.7909 28 20C28 22.2091 26.2091 24 24 24Z" fill="#212121"/>
-      </svg>
-      <span class="text-sm md:text-2xl font-medium md:font-gelica">Get Full Access</span>
-    </a>
-
   </nav>
 
   <!-- Coming Soon label script -->
@@ -130,15 +105,6 @@
           if (label) label.textContent = 'Soon';
         });
       });
-    });
-  </script>
-
-  <!-- Memberful embed -->
-  <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function() {
-      var script = document.createElement("script");
-      script.src = "https://js.memberful.com/embed.js";
-      document.body.appendChild(script);
     });
   </script>
 </body>

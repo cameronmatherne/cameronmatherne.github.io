@@ -1,23 +1,13 @@
 <!DOCTYPE html>
+
 <html class="h-full">
+
   {% include head.html %}
 
   <body class="flex h-full font-inter bg-orange-50 text-orange-950">
 
     {{ content }}
-
-    <!-- Memberful embed script at end of body -->
-    <script type="text/javascript">
-      (function() {
-        var script = document.createElement("script");
-        script.src = "https://js.memberful.com/embed.js";
-        script.async = true;
-        document.body.appendChild(script);
-      })();
-    </script>
-
-    <!-- Optional extra Memberful logic -->
-    <script src="/js/memberful.js"></script>
-
+    
   </body>
+
 </html>

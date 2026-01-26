@@ -1,7 +1,7 @@
 ---
 layout: recipe
 title: HOMEMADE HAMBURGER HELPER
-image: photo-missing.jpg
+image: homemade-hamburger-helper.jpg
 tags:
   - mains
   - beef
