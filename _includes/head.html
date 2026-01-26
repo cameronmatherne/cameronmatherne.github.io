@@ -37,7 +37,6 @@
   <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta name="twitter:image" content="{% if page.title %}{{ site.baseurl }}/images/{{ page.image }}{% else %}/assets/social.png{% endif %}">
 
-
   <style>
     @view-transition {
       navigation: auto;
@@ -76,6 +75,18 @@
         },
       },
     };
+  </script>
+
+  <!-- Memberful Script --> 
+  <script type="text/javascript">
+    (function(c) {
+      var script = document.createElement("script");
+      script.src = "https://js.memberful.com/embed.js";
+      script.onload = function() { Memberful.setup(c) };
+      document.head.appendChild(script);
+    })({
+      site: ["https://cameronsrecipes.memberful.com"]
+    });
   </script>
 
   <script>

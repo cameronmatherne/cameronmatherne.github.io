@@ -1,14 +1,14 @@
 # Site settings
-title: RecipeFinder
-email: your-email@domain.com
-description: The plain text recipe database for hackers
+title: Cameron's Recipe Archive
+email: cameronpmatherne@gmail.com
+description: Low calorie, high protein recipes for everyone.
 url: "https://cameronmatherne.github.io"
 baseurl: ""
 language: "en"
 lang_direction: "ltr"
 color: "#F53200"
 twitter_username: clarklab
-github_username:  clarklab
+github_username:  cameronmatherne
 
 # Build settings
 markdown: kramdown

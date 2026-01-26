@@ -5,6 +5,19 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
+
+    <!-- Memberful Script --> 
+    <script type="text/javascript">
+      (function(c) {
+        var script = document.createElement("script");
+        script.src = "https://js.memberful.com/embed.js";
+        script.onload = function() { Memberful.setup(c) };
+        document.head.appendChild(script);
+      })({
+        site: ["https://cameronsrecipes.memberful.com"]
+      });
+    </script>
+
   </header>
 
   <article class="post-content">

@@ -7,7 +7,6 @@ layout: default
     </h1>
       <div class="recipes mb-24 py-8">
           <h2 class="text-red-950 md:text-primary uppercase font-semibold mb-2 px-6">Most Recent</h2>
-
           <div class="flex overflow-scroll md:overflow-visible snap-x md:grid px-6 md:h-full md:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-6">
             <!-- First 3 Recipes -->
             {% assign first_recipes = site.recipes | sort:"date" %}
@@ -29,8 +28,6 @@ layout: default
                     <h1 class="font-semibold leading-tight">{{ post.title }}</h1>
                 </a>
             {% endfor %}
-               
-            
           </div>
       </div>
 
