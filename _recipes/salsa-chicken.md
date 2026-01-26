@@ -32,4 +32,4 @@ directions:
   - Add lime juice if using, garnish with cilantro, and serve hot.
 ---
 
-Juicy, **high-protein shredded chicken** cooked low and slow with salsa and broth for extra moisture and flavor. Perfect for meal prep, tacos, burrito bowls, salads, or low-carb wraps.
+Juicy, **high-protein shredded chicken** cooked low and slow with salsa and broth for extra moisture and flavor. This recipe serves as an excellent base to put together other things throughout the week. Typically, I will make large portion of shredded chickne with this recipe, and use it throughout the week in bowls, tacos, wraps, salads, quesidillas, ect. 

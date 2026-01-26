@@ -8,9 +8,11 @@ tags:
   - high-protein
   - low-calorie
 ingredients:
-  - 1 lb lean ground beef (90-95% lean)
+  - 1 lb lean ground beef (90–95% lean)
   - 3 cloves garlic, minced
-  - 1 small onion, diced
+  - 1 small onion, sliced
+  - 1 red, yellow, or orange bell pepper, sliced
+  - 1 zucchini squash, sliced
   - 1/4 cup low-sodium soy sauce or tamari
   - 1 tbsp sesame oil
   - 1 tbsp rice vinegar
@@ -18,16 +20,16 @@ ingredients:
   - 1 tsp ginger, grated
   - 1 tsp black pepper
   - 1/2 tsp chili flakes (optional)
-  - 2 cups shredded cabbage or bagged coleslaw mix
-  - 1 cup shredded carrots
   - 2 green onions, sliced for garnish
   - Sesame seeds for garnish (optional)
 directions:
-  - Heat a nonstick skillet or wok over medium heat. Add the ground beef and cook until browned, breaking it apart as it cooks (about 6-8 minutes). Drain any excess fat if needed.
-  - Add garlic and onion to the pan and cook 2-3 minutes until fragrant and slightly softened.
-  - In a small bowl, mix together soy sauce, sesame oil, rice vinegar, gochujang, ginger, black pepper, and chili flakes (if using).
-  - Add shredded cabbage and carrots to the pan, then pour the sauce over the beef and vegetables. Stir well to coat and cook for 4-5 minutes until vegetables are tender-crisp.
+  - Heat a large nonstick skillet or wok over medium-high heat. Add the ground beef and cook, breaking it apart, until browned and cooked through (about 6–8 minutes). Drain excess fat if needed.
+  - Push the beef to one side of the pan and add the sliced onion. Cook for 2–3 minutes until slightly softened.
+  - Add the garlic and ginger and cook for 30–60 seconds until fragrant.
+  - Add the bell pepper and zucchini to the pan. Stir-fry for 3–4 minutes until the vegetables are tender but still slightly crisp.
+  - In a small bowl, whisk together soy sauce, sesame oil, rice vinegar, gochujang (if using), black pepper, and chili flakes.
+  - Pour the sauce over the beef and vegetables and stir well to coat evenly. Cook for another 1–2 minutes to let everything come together.
   - Remove from heat and garnish with sliced green onions and sesame seeds if desired. Serve hot.
 ---
 
-A **lean, high-protein Korean-style ground beef bowl** packed with flavor and fresh vegetables. Using shredded cabbage or a coleslaw mix keeps it low-calorie while giving plenty of crunch. Perfect as a meal prep option or quick weeknight dinner!  
+A **lean, high-protein Korean-style beef bowl** made with sautéed zucchini, bell peppers, and onions for a fresh, low-calorie twist. Quick to cook, packed with flavor, and perfect for meal prep or an easy weeknight dinner.

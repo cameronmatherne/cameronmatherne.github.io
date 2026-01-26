@@ -29,6 +29,6 @@ directions:
   - Garnish with extra herbs or sliced cucumber/radishes if desired. Serve immediately.
 ---
 
-This **high-protein, low-calorie larb** keeps all the bright, zesty flavors of the traditional Thai dish while using lean ground chicken and fresh herbs. Perfect as a light dinner or high-protein lunch!  
+This **high-protein, low-calorie larb** keeps all the bright, zesty flavors of the traditional Thai dish while using lean ground chicken and fresh herbs. Perfect as a light dinner or high-protein lunch! To more closely represent the original dish ground pork can be used, although I think chicken is a full-flavored substitute with much less fat and higher protein. 
 
 Optional: sprinkle a little toasted rice powder on top for the authentic texture without adding
