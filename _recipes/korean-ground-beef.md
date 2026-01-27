@@ -1,7 +1,7 @@
 ---
 layout: recipe
 title: KOREAN-STYLE BEEF BOWL
-image: photo-missing.jpg
+image: korean-beef.jpg
 tags:
   - mains
   - beef
