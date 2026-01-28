@@ -75,33 +75,6 @@
     type="text/javascript"
   >
   </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      MemberStack.onReady.then(function(member) {
-        const authLink = document.getElementById("ms-auth-link");
-        const authLabel = document.getElementById("ms-auth-label");
-
-        if (member.loggedIn) {
-          // Logged in → show Log Out
-          authLabel.textContent = "Log Out";
-          authLink.href = "#"; // optional
-          authLink.addEventListener("click", function(e) {
-            e.preventDefault();
-            MemberStack.logout().then(() => {
-              location.reload(); // refresh to update nav
-            });
-          });
-        } else {
-          // Logged out → show Sign Up
-          authLabel.textContent = "Sign Up";
-          authLink.setAttribute("data-ms-modal", "signup");
-        }
-      });
-    });
-  </script>
-
-
 </head>
 
 <body class="flex h-full font-inter bg-orange-50 text-orange-950">
