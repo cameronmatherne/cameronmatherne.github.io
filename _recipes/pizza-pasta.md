@@ -1,7 +1,7 @@
 ---
 layout: recipe
-title: PIZZA PASTA
-image: photo-missing.jpg
+title: PEPPERONI PIZZA PASTA
+image: pizza-pasta.jpg
 tags:
   - mainss
   - pasta

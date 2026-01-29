@@ -1,7 +1,7 @@
 ---
 layout: recipe
 title: EGG ROLL IN A BOWL
-image: photo-missing.jpg
+image: egg-roll.jpg
 tags:
   - mains
   - pork

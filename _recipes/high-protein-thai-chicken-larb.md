@@ -1,7 +1,7 @@
 ---
 layout: recipe
 title: THAI CHICKEN LARB
-image: photo-missing.jpg
+image: chicken-larb.jpg
 tags:
   - mains
   - chicken

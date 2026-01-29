@@ -1,6 +1,6 @@
 ---
 layout: recipe
-title: KOREAN-STYLE BEEF BOWL
+title: BOLGOGI BEEF BOWL
 image: korean-beef.jpg
 tags:
   - mains
