@@ -1,11 +1,29 @@
 ---
 layout: default
 ---
-<div
-  class="w-full"
-  itemscope
-  itemtype="http://schema.org/Recipe"
->
+<div class="w-full" itemscope itemtype="http://schema.org/Recipe">
+
+  {% assign recipe_slug = page.title | slugify %}
+
+  <style>
+  /* Locking/blur CSS */
+  .locked .recipe-content {
+    filter: blur(6px);
+    pointer-events: none;
+  }
+
+  .locked .locked-message {
+    display: block;
+    font-weight: bold;
+    color: #c00;
+    text-align: center;
+    margin: 1em 0;
+  }
+
+  .locked-message {
+    display: none;
+  }
+  </style>
 
   <article
     class="post-content px-6 pt-6 pb-16 md:px-24 md:pt-10 md:pb-24 flex flex-col gap-10 max-w-5xl mx-auto"
@@ -28,78 +46,103 @@ layout: default
       </svg>
     </a>
 
-    <header class="recipe-header flex flex-col gap-4 max-w-3xl">
-      <h1
-        class="recipe-title font-gelica text-primary text-left text-5xl lg:text-7xl font-extrabold leading-tight"
-        itemprop="name"
-      >
-        {{ page.title }}
-      </h1>
+    <div class="recipe-content">
 
-      <div class="tags flex flex-wrap gap-2">
-        {% for tag in page.tags %}
-          <a
-            href="{{ site.baseurl }}/search?tag={{ tag }}"
-            class="tag py-1 px-3 bg-red-200 rounded-lg text-red-900 hover:bg-primary hover:text-white transition"
+      <header class="recipe-header flex flex-col gap-4 max-w-3xl">
+        <h1
+          class="recipe-title font-gelica text-primary text-left text-5xl lg:text-7xl font-extrabold leading-tight"
+          itemprop="name"
+        >
+          {{ page.title }}
+        </h1>
+        <div class="tags flex flex-wrap gap-2">
+          {% for tag in page.tags %}
+            <a
+              href="{{ site.baseurl }}/search?tag={{ tag }}"
+              class="tag py-1 px-3 bg-red-200 rounded-lg text-red-900 hover:bg-primary hover:text-white transition"
+            >
+              {{ tag | strip }}
+            </a>
+          {% endfor %}
+        </div>
+
+        <div
+          class="text-left text-lg leading-relaxed text-orange-900 [&>*]:mb-6 [&_a]:underline [&_a]:decoration-[3px] [&_a]:decoration-primary [&_a]:underline-offset-2"
+          itemprop="description"
+        >
+          {{ page.content }}
+        </div>
+      </header>
+
+      {% if page.nutrition %}
+        <div class="nutrition max-w-3xl -mt-4">
+          {% include nutritional-information.html %}
+        </div>
+      {% endif %}
+
+      {% if page.ingredients %}
+        <section class="max-w-3xl -mt-4">
+          <h2 class="uppercase text-primary font-semibold mb-4 tracking-wide">
+            {{ site.translation[site.language].ingredients }}
+          </h2>
+          <ul
+            itemprop="ingredients"
+            class="flex flex-col gap-3 text-lg leading-loose"
           >
-            {{ tag | strip }}
-          </a>
-        {% endfor %}
-      </div>
+            {% for ingredient in page.ingredients %}
+              <li itemprop="recipeIngredient" class="flex gap-3 items-start">
+                {{ ingredient | markdownify }}
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
 
-      <div
-        class="text-left text-lg leading-relaxed text-orange-900 [&>*]:mb-6 [&_a]:underline [&_a]:decoration-[3px] [&_a]:decoration-primary [&_a]:underline-offset-2"
-        itemprop="description"
-      >
-        {{ page.content }}
-      </div>
-    </header>
-
-    {% if page.nutrition %}
-      <div class="nutrition max-w-3xl -mt-4">
-        {% include nutritional-information.html %}
-      </div>
-    {% endif %}
-
-    {% if page.ingredients %}
-      <section class="max-w-3xl -mt-4">
+      <section class="max-w-3xl -mt-2">
         <h2 class="uppercase text-primary font-semibold mb-4 tracking-wide">
-          {{ site.translation[site.language].ingredients }}
+          {{ site.translation[site.language].directions }}
         </h2>
         <ul
-          itemprop="ingredients"
-          class="flex flex-col gap-3 text-lg leading-loose"
+          itemprop="recipeInstructions"
+          class="flex flex-col gap-4 text-lg leading-loose"
         >
-          {% for ingredient in page.ingredients %}
-            <li itemprop="recipeIngredient" class="flex gap-3 items-start">
-              {{ ingredient | markdownify }}
+          {% for direction in page.directions %}
+            <li class="flex gap-3 items-start">
+              {{ direction | markdownify }}
             </li>
           {% endfor %}
         </ul>
       </section>
-    {% endif %}
 
-    <section class="max-w-3xl -mt-2">
-      <h2 class="uppercase text-primary font-semibold mb-4 tracking-wide">
-        {{ site.translation[site.language].directions }}
-      </h2>
-      <ul
-        itemprop="recipeInstructions"
-        class="flex flex-col gap-4 text-lg leading-loose"
-      >
-        {% for direction in page.directions %}
-          <li class="flex gap-3 items-start">
-            {{ direction | markdownify }}
-          </li>
-        {% endfor %}
-      </ul>
-    </section>
+      {% for category in page.categories %}
+        <p class="text-sm opacity-60 max-w-3xl">
+          {{ site.translation[site.language].category }}:
+          <span itemprop="recipeCategory">{{ category }}</span>
+        </p>
+      {% endfor %}
 
-    {% for category in page.categories %}
-      <p class="text-sm opacity-60 max-w-3xl">
-        {{ site.translation[site.language].category }}:
-        <span itemprop="recipeCategory">{{ category }}</span>
-      </p>
-    {% endfor %}
+    </div>
+
+    <div class="locked-message">
+      🔒 This is a premium recipe. Upgrade to unlock!
+    </div>
+
   </article>
 </div>
+
+<script>
+(async () => {
+  const slug = "{{ recipe_slug }}";
+
+  // try {
+  //   const res = await fetch(`https://your-vercel-project.vercel.app/api/recipes/${slug}`);
+  //   const { allowed } = await res.json();
+
+  //   if (!allowed) {
+  //     document.body.classList.add("locked");
+  //   }
+  // } catch (err) {
+  //   console.error("Error checking recipe access:", err);
+  // }
+})();
+</script>
