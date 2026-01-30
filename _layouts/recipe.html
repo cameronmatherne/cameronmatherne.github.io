@@ -2,9 +2,7 @@
 layout: default
 ---
 <div class="w-full" itemscope itemtype="http://schema.org/Recipe">
-
   {% assign recipe_slug = page.title | slugify %}
-
   <style>
   /* Locking/blur CSS */
   .locked .recipe-content {
@@ -129,20 +127,3 @@ layout: default
 
   </article>
 </div>
-
-<script>
-(async () => {
-  const slug = "{{ recipe_slug }}";
-
-  // try {
-  //   const res = await fetch(`https://your-vercel-project.vercel.app/api/recipes/${slug}`);
-  //   const { allowed } = await res.json();
-
-  //   if (!allowed) {
-  //     document.body.classList.add("locked");
-  //   }
-  // } catch (err) {
-  //   console.error("Error checking recipe access:", err);
-  // }
-})();
-</script>

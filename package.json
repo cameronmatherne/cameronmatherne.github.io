@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@memberstack/dom": "^2.0.1",
+    "@netlify/functions": "^5.1.2",
     "express": "^5.2.1"
   }
 }
