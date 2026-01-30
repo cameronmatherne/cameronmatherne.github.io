@@ -1,16 +1,18 @@
-version: "3"
+version: "3.9"  # modern Compose version, safe to keep
 
 services:
   chowdown:
     image: jekyll/jekyll
+    platform: linux/amd64  # needed for Apple Silicon
+    container_name: recipe-finder
     restart: always
-    container_name: chowdown
     command: jekyll serve --force_polling
     ports:
-      - "80:4000"
+      - "4000:4000"
     volumes:
-      - .:/srv/jekyll
-      - /opt/docker/chowdown/data/components:/srv/jekyll/_components
-      - /opt/docker/chowdown/data/images:/srv/jekyll/_images
-      - /opt/docker/chowdown/data/posts:/srv/jekyll/_posts
-      - /opt/docker/chowdown/data/recipes:/srv/jekyll/_recipes
+      - .:/srv/jekyll             # mount project root
+      - ./_components:/srv/jekyll/_components
+      - ./_images:/srv/jekyll/_images
+      - ./_posts:/srv/jekyll/_posts
+      - ./_recipes:/srv/jekyll/_recipes
+      - ./functions:/srv/jekyll/functions

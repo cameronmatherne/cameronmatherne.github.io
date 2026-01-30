@@ -4,3 +4,6 @@
 
 [functions]
   directory = "functions"
+
+[build.environment]
+  RUBY_VERSION = "3.1.2"
