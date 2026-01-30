@@ -86,13 +86,6 @@
       </svg>
     </a>
 
-    <a href="#" id="auth-btn" class="flex flex-col md:flex-row items-center gap-0 md:gap-2">
-      <svg class="w-12 md:w-10" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 24C29.5228 24 34 19.5228 34 14C34 8.47715 29.5228 4 24 4C18.4772 4 14 8.47715 14 14C14 19.5228 18.4772 24 24 24Z" fill="#212121"/>
-        <path d="M12 44C12 37.3726 17.3726 32 24 32C30.6274 32 36 37.3726 36 44H34C34 38.4772 29.5228 34 24 34C18.4772 34 14 38.4772 14 44H12Z" fill="#212121"/>
-      </svg>
-      <span id="auth-label" class="text-sm md:text-2xl font-medium md:font-gelica">Sign In</span>
-    </a>
   </nav>
 
   <!-- Coming Soon label script -->
@@ -108,52 +101,6 @@
     });
   </script>
 
-  <!-- Fixed Supabase Auth -->
-  <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-
-      const supabase = supabase.createClient(
-        "{{ site.env.SUPABASE_URL }}",
-        "{{ site.env.SUPABASE_ANON_KEY }}"
-      );
-      const authBtn = document.getElementById("auth-btn");
-      const authLabel = document.getElementById("auth-label");
-
-      async function updateAuthUI() {
-        const { data: { session } } = await supabase.auth.getSession();
-        if (session) {
-          authLabel.textContent = `Log Out (${session.user.email})`;
-        } else {
-          authLabel.textContent = "Sign In";
-        }
-      }
-
-      authBtn.addEventListener("click", async (e) => {
-        e.preventDefault();
-        const { data: { session } } = await supabase.auth.getSession();
-        if (session) {
-          await supabase.auth.signOut();
-          updateAuthUI();
-        } else {
-          const email = prompt("Enter your email:");
-          const password = prompt("Enter your password:");
-          if (!email || !password) return alert("Email & password required");
-          let { data, error } = await supabase.auth.signInWithPassword({ email, password });
-          if (error) {
-            const { data: signupData, error: signupError } = await supabase.auth.signUp({ email, password });
-            if (signupError) return alert(signupError.message);
-            alert("Sign-up successful! Check your email.");
-          }
-          updateAuthUI();
-        }
-      });
-
-      updateAuthUI();
-      supabase.auth.onAuthStateChange(() => updateAuthUI());
-    });
-  </script>
-
-  <!-- Fixed Netlify function call -->
   <script>
     const functionsBaseUrl = window.location.hostname === "localhost" ? "http://localhost:8888" : "";
     fetch(`${functionsBaseUrl}/.netlify/functions/hello`)
@@ -163,7 +110,16 @@
       })
       .then(data => console.log("Function response:", data))
       .catch(err => console.error("Error calling function:", err));
-  </script>
 
+    fetch(`${functionsBaseUrl}/.netlify/functions/getRecipes`)
+    .then(res => res.json())
+    .then(data => {
+      console.log("Recipes:", data);
+      
+      window.recipes = data;
+    })
+    .catch(err => console.error("Error fetching recipes:", err));
+
+  </script>
 </body>
 </html>
