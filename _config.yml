@@ -2,7 +2,8 @@
 title: Cameron's Recipe Archive
 email: cameronpmatherne@gmail.com
 description: Low calorie, high protein recipes for everyone.
-url: "https://cameronmatherne.github.io"
+#url: "https://cameronmatherne.github.io"
+url: "http://localhost:4000"
 baseurl: ""
 language: "en"
 lang_direction: "ltr"
