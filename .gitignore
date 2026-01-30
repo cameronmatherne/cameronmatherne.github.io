@@ -9,3 +9,4 @@ _recipes/.obsidian/workspace.json
 
 # Local Netlify folder
 .netlify
+.env
